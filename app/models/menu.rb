@@ -3,4 +3,5 @@ class Menu < ApplicationRecord
 
   validates :name,       presence: true
   validates :pasta_name, presence: true
+  validates :image,      presence: true
 end
