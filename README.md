@@ -13,9 +13,11 @@
 <br>
 
 ## menus テーブル
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
+| Column     | Type   | Options     |
+| ---------- | ------ | ----------- |
+| name       | string | null: false |
+| image      |        |             |
+| pasta_name | string | null: false |
 
 ### Association
 - has_many :contents
@@ -26,6 +28,7 @@
 | Column  | Type    | Options           |
 | ------- | ------- | ----------------- |
 | menu_id | integer | foreign_key: true | 
+| name    | string  | null: false       |
 | text    | text    | null: false       |
 
 ### Association
