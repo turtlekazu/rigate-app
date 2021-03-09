@@ -1,0 +1,8 @@
+<h1>Let's Create New Menu<h1>
+
+<%= form_with model: @menu, local: true do |f| %>
+  <%= f.text_field  :name,       class:'menu_name',        placeholder: 'input menu_name'  %>
+  <%= f.text_field  :pasta_name, class:'menu_pasta_name',  placeholder: 'input pasta_name'  %>
+  <%= f.file_field  :image,      class:'menu_image' %>
+  <%= f.submit 'SUBMIT' %>
+<% end %>
