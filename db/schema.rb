@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_10_073340) do
+ActiveRecord::Schema.define(version: 2021_03_10_103551) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -50,6 +50,17 @@ ActiveRecord::Schema.define(version: 2021_03_10_073340) do
     t.index ["menu_id"], name: "index_curriculums_on_menu_id"
   end
 
+  create_table "exams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "question", null: false
+    t.text "question_code", null: false
+    t.text "answer_code", null: false
+    t.text "explaination", null: false
+    t.bigint "curriculum_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["curriculum_id"], name: "index_exams_on_curriculum_id"
+  end
+
   create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "pasta_name", null: false
@@ -73,4 +84,5 @@ ActiveRecord::Schema.define(version: 2021_03_10_073340) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "contents", "curriculums"
   add_foreign_key "curriculums", "menus"
+  add_foreign_key "exams", "curriculums"
 end
