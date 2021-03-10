@@ -1,0 +1,5 @@
+<h1>Let's Create New ExamResponse</h1>
+<%= form_with model: [@curriculum, @exam_response], local: true do |f| %>
+  <%= f.text_area   :user_answer_code,  class:'user_answer_code',  placeholder: 'input your answer' %>
+  <%= f.submit 'SUBMIT' %>
+<% end %>
