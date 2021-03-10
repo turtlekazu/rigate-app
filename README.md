@@ -42,7 +42,7 @@
 | Column        | Type    | Options           |
 | ------------- | ------- | ----------------- |
 | curriculum_id | integer | foreign_key: true | 
-| title         | string  | null: false       |
+| title         | string  |                   |
 | text          | text    | null: false       |
 
 ### Association
