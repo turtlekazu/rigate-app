@@ -33,7 +33,7 @@
 ### Association
 - has_many   :exam_responses
 - has_many   :contents
-- has_one    :exams
+- has_one    :exam
 - belongs_to :menu
 
 <br>
