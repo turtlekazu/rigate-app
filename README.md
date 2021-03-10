@@ -31,9 +31,9 @@
 | name    | string  | null: false       |
 
 ### Association
-- has_many   :exam_responses
 - has_many   :contents
 - has_one    :exam
+- has_many   :exam_responses
 - belongs_to :menu
 
 <br>
