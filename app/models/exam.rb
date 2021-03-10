@@ -1,5 +1,5 @@
 class Exam < ApplicationRecord
-  belongs_to :curriculum
+  belongs_to :curriculum, optional: true
 
   validates :question,      presence: true
   validates :question_code, presence: true
