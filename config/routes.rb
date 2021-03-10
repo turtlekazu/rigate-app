@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :curriculums do
     resources :contents,       only: [:new, :create]
     resources :exams,          only: [:new, :create]
-    resources :exam_responses, only: [:new, :create]
+    resources :exam_responses, only: [:new, :create, :edit, :update]
   end
 end
