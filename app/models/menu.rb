@@ -1,6 +1,6 @@
 class Menu < ApplicationRecord
   has_one_attached :image
-  has_many         :curriculums
+  has_many         :curriculums, dependent: :destroy
 
   validates :name,       presence: true
   validates :pasta_name, presence: true

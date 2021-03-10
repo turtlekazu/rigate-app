@@ -21,6 +21,12 @@ class MenusController < ApplicationController
     @curriculums = @menu.curriculums.all
   end
 
+  def destroy
+    @menu = Menu.find(params[:id])
+    @menu.destroy
+    redirect_to root_path
+  end
+
   private
 
   def menu_params
