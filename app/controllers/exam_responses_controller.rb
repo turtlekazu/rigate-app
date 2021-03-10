@@ -35,6 +35,7 @@ class ExamResponsesController < ApplicationController
   private
 
   def exam_response_params
-    params.require(:exam_response).permit(:is_done, :user_answer_code, :score).merge(user_id: current_user.id,curriculum_id: params[:curriculum_id])
+    params.require(:exam_response).permit(:is_done, :user_answer_code, :score).merge(user_id: current_user.id,
+                                                                                     curriculum_id: params[:curriculum_id])
   end
 end

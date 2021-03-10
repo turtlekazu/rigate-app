@@ -20,6 +20,7 @@ class ExamsController < ApplicationController
   private
 
   def exam_params
-    params.require(:exam).permit(:question, :question_code, :answer_code, :explanation).merge(curriculum_id: params[:curriculum_id])
+    params.require(:exam).permit(:question, :question_code, :answer_code,
+                                 :explanation).merge(curriculum_id: params[:curriculum_id])
   end
 end

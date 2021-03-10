@@ -1,7 +1,4 @@
 class CurriculumsController < ApplicationController
-  def show
-  end
-
   def new
     @curriculum = Curriculum.new
     @menus = Menu.all
