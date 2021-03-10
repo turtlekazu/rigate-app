@@ -1,10 +1,15 @@
-<h1>Curriculums#show</h1>
 <%= link_to "home", root_path %>
+<h1><%= @curriculum.name %></h1>
+
 <%= link_to 'new_content', new_curriculum_content_path(@curriculum) %>
 <%= link_to 'new_exam', new_curriculum_exam_path(@curriculum) %>
-<%= link_to 'new_exam_response', new_curriculum_exam_response_path(@curriculum) %>
 
 <% @contents.each do |content| %>
   <div><%= content.title %></div>
   <div><%= content.text %></div>
 <% end %>
+
+<div>
+  <br>
+  <%= link_to 'new_exam_response', new_curriculum_exam_response_path(@curriculum) %>
+</div>
