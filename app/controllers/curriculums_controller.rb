@@ -16,6 +16,11 @@ class CurriculumsController < ApplicationController
     end
   end
 
+  def show
+    @curriculum = Curriculum.find(params[:id])
+    @contents = @curriculum.contents.all
+  end
+
   private
 
   def curriculum_params

@@ -1,2 +1,7 @@
 <h1>Curriculums#show</h1>
-<p>Find me in app/views/curriculums/show.html.erb</p>
+<%= link_to 'new', new_curriculum_content_path(@curriculum) %>
+
+<% @contents.each do |content| %>
+  <div><%= content.title %></div>
+  <div><%= content.text %></div>
+<% end %>

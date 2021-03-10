@@ -1,0 +1,7 @@
+<h1>Let's Create New Content</h1>
+<%= form_with model: [@curriculum, @content], local: true do |f| %>
+  <%= f.collection_select :curriculum_id, @curriculums, :id, :name, include_blank: "選択してください" %>
+  <%= f.text_field  :title, class:'content_title', placeholder: 'input content_title'  %>
+  <%= f.text_area   :text,  class:'content_text',  placeholder: 'input content_text'  %>
+  <%= f.submit 'SUBMIT' %>
+<% end %>

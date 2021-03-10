@@ -3,5 +3,7 @@
 <%= link_to "new", new_curriculum_path %>
 
 <% @curriculums.each do |curriculum| %>
-  <div><%= curriculum.name %></div>
+  <%= link_to curriculum_path(curriculum) do %>
+    <div><%= curriculum.name %></div>
+  <% end %>
 <% end %>
