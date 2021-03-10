@@ -69,9 +69,8 @@
 | ---------------- | ------- | ----------------- |
 | user_id          | integer | foreign_key: true |
 | curriculum_id    | integer | foreign_key: true |
-| is_done          | boolean | null: false       |
 | user_answer_code | text    | null: false       |
-| score            | integer | null: false       |
+| score            | integer |                   |
 
 ### Association
 - belongs_to :user

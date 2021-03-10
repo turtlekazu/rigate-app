@@ -51,9 +51,8 @@ ActiveRecord::Schema.define(version: 2021_03_10_143443) do
   end
 
   create_table "exam_responses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.boolean "is_done", null: false
     t.text "user_answer_code", null: false
-    t.integer "score", null: false
+    t.integer "score"
     t.bigint "user_id"
     t.bigint "curriculum_id"
     t.datetime "created_at", precision: 6, null: false
