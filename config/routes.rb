@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: 'menus#index'
   resources :menus
   resources :curriculums do
-    resources :contents, only: [:new, :create]
-    resources :exams, only: [:index, :new, :create]
+    resources :contents,       only: [:new, :create]
+    resources :exams,          only: [:new, :create]
+    resources :exam_responses, only: [:new, :create]
   end
 end
