@@ -2,6 +2,7 @@
 <%= link_to "home", root_path %>
 <%= link_to 'new_content', new_curriculum_content_path(@curriculum) %>
 <%= link_to 'new_exam', new_curriculum_exam_path(@curriculum) %>
+<%= link_to 'new_exam_response', new_curriculum_exam_response_path(@curriculum) %>
 
 <% @contents.each do |content| %>
   <div><%= content.title %></div>
