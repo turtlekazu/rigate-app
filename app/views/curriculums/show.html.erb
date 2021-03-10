@@ -1,5 +1,6 @@
 <h1>Curriculums#show</h1>
-<%= link_to 'new', new_curriculum_content_path(@curriculum) %>
+<%= link_to "home", root_path %>
+<%= link_to 'new_content', new_curriculum_content_path(@curriculum) %>
 
 <% @contents.each do |content| %>
   <div><%= content.title %></div>
