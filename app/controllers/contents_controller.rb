@@ -7,8 +7,9 @@ class ContentsController < ApplicationController
 
   def create
     @content = Content.new(content_params)
+    @curriculum = Curriculum.find(params[:curriculum_id])
     if @content.save
-      redirect_to curriculum_path(content_params[:curriculum_id])
+      redirect_to curriculum_path(@curriculum)
     else
       render :new
     end

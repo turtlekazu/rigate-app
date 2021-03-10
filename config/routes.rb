@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :menus
   resources :curriculums do
     resources :contents, only: [:new, :create]
+    resources :exams, only: [:index, :new, :create]
   end
 end

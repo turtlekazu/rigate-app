@@ -1,0 +1,8 @@
+<h1>Let's Create New Exam</h1>
+<%= form_with model: [@curriculum, @exam], local: true do |f| %>
+  <%= f.text_field  :question, class:'exam_question', placeholder: 'input exam_question' %>
+  <%= f.text_area   :question_code,  class:'exam_question_code',  placeholder: 'input exam_question_code' %>
+  <%= f.text_area   :answer_code,  class:'exam_answer_code',  placeholder: 'input exam_answer_code' %>
+  <%= f.text_area   :explanation,  class:'exam_explanation',  placeholder: 'input exam_explanation'  %>
+  <%= f.submit 'SUBMIT' %>
+<% end %>
