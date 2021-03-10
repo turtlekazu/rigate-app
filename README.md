@@ -8,7 +8,7 @@
 | encrypted_password | string | null: false               |
 
 ### Association
-- has_many :exams
+- has_many :exam_responses
 
 <br>
 
@@ -31,9 +31,9 @@
 | name    | string  | null: false       |
 
 ### Association
-- has_many   :exams
+- has_many   :exam_responses
 - has_many   :contents
-- has_one    :question
+- has_one    :exams
 - belongs_to :menu
 
 <br>
@@ -50,7 +50,7 @@
 
 <br>
 
-## questions テーブル
+## exams テーブル
 | Column        | Type    | Options           |
 | ------------- | ------- | ----------------- |
 | curriculum_id | integer | foreign_key: true | 
@@ -64,7 +64,7 @@
 
 <br>
 
-## exams テーブル
+## exam_responses テーブル
 | Column           | Type    | Options           |
 | ---------------- | ------- | ----------------- |
 | user_id          | integer | foreign_key: true |
