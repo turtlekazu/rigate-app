@@ -2,6 +2,8 @@ class ExamResponsesController < ApplicationController
   def new
     @exam_response = ExamResponse.new
     @curriculum = Curriculum.find(params[:curriculum_id])
+    @exam = Exam.where(curriculum_id: params[:curriculum_id]).last
+    binding.pry
   end
 
   def create
