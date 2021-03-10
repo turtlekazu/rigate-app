@@ -26,7 +26,7 @@ class ExamResponsesController < ApplicationController
     @exam = Exam.where(curriculum_id: params[:curriculum_id]).last
     @curriculum = Curriculum.find(params[:curriculum_id])
     if @exam_response.update(exam_response_params)
-      redirect_to curriculum_path(params[:curriculum_id])
+      redirect_to menu_path(@curriculum.menu_id)
     else
       render :edit
     end
