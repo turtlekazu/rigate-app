@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2021_03_10_143443) do
     t.bigint "curriculum_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["curriculum_id"], name: "index_exams_on_curriculum_id"
+    t.index ["curriculum_id"], name: "index_exams_on_curriculum_id", unique: true
   end
 
   create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
