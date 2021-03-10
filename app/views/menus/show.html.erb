@@ -1,12 +1,18 @@
 <%= link_to "home", root_path %>
 <h1><%= @menu.name %> <%= @menu.pasta_name %></h1>
 
-<%= link_to "new_curriculum", new_curriculum_path %>
+<div><%= link_to "new_curriculum", new_curriculum_path %><div>
 
-<% @curriculums.each do |curriculum| %>
-  <%= link_to curriculum_path(curriculum) do %>
-    <div><%= curriculum.name %></div>
-  <% end %>
-<% end %>
 <br>
-<%= link_to "delete_menu", menu_path(@menu), method: :delete %>
+
+<div>
+  <% @curriculums.each do |curriculum| %>
+    <%= link_to curriculum_path(curriculum) do %>
+      <div><%= curriculum.name %></div>
+    <% end %>
+  <% end %>
+</div>
+
+<br>
+
+<div><%= link_to "delete_menu", menu_path(@menu), method: :delete %></div>
