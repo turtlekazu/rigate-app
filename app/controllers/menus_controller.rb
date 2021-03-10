@@ -18,6 +18,7 @@ class MenusController < ApplicationController
 
   def show
     @menu = Menu.find(params[:id])
+    @curriculums = @menu.curriculums.all
   end
 
   private

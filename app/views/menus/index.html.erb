@@ -1,8 +1,13 @@
 <h1>No more spaghetti codes.</h1>
+<%= link_to "home", root_path %>
+<%= link_to "new", new_menu_path %>
+
 <div class="menu_list">
   <% @menus.each do |menu| %>
-    <div><%= menu.name %></div>
-    <div><%= menu.pasta_name %></div>
-    <div><%= image_tag menu.image.variant(resize: '100x100') %></div>
+    <%= link_to menu_path(menu) do %>
+      <div><%= menu.name %></div>
+      <div><%= menu.pasta_name %></div>
+      <div><%= image_tag menu.image.variant(resize: '100x100') %></div>
+    <% end %>
   <% end %>
 </div>

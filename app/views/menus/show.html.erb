@@ -1,1 +1,7 @@
 <h1>Menu#show = Curriculum#index</h1>
+<%= link_to "home", root_path %>
+<%= link_to "new", new_curriculum_path %>
+
+<% @curriculums.each do |curriculum| %>
+  <div><%= curriculum.name %></div>
+<% end %>
