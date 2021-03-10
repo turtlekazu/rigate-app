@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_03_10_103551) do
     t.string "question", null: false
     t.text "question_code", null: false
     t.text "answer_code", null: false
-    t.text "explaination", null: false
+    t.text "explanation", null: false
     t.bigint "curriculum_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

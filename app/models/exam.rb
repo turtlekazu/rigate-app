@@ -4,5 +4,5 @@ class Exam < ApplicationRecord
   validates :question,      presence: true
   validates :question_code, presence: true
   validates :answer_code,   presence: true
-  validates :explaination,  presence: true
+  validates :explanation,  presence: true
 end
