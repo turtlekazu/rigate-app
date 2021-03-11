@@ -1,11 +1,12 @@
 <%= render "shared/header" %>
-<%= link_to "home", root_path %>
 <h1><%= @curriculum.name %></h1>
 
-<div>
-  <%= link_to 'new_content', new_curriculum_content_path(@curriculum) %>
-  <%= link_to 'new_exam', new_curriculum_exam_path(@curriculum) %>
-</div>
+<% if current_user.admin? %>
+  <div>
+    <%= link_to 'new_content', new_curriculum_content_path(@curriculum) %>
+    <%= link_to 'new_exam', new_curriculum_exam_path(@curriculum) %>
+  </div>
+<% end %>
 
 <br>
 
@@ -19,6 +20,6 @@
 <br>
 
 <div>
-  <%= link_to 'new_exam_response', new_curriculum_exam_response_path(@curriculum) %>
+  <%= link_to 'NEXT', new_curriculum_exam_response_path(@curriculum) %>
 </div>
 <%= render "shared/footer" %>

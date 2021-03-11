@@ -1,8 +1,9 @@
 <%= render "shared/header" %>
-<%= link_to "home", root_path %>
 <h1><%= @menu.name %> <%= @menu.pasta_name %></h1>
 
-<div><%= link_to "new_curriculum", new_curriculum_path %><div>
+<% if current_user.admin? %>
+  <div><%= link_to "new_curriculum", new_curriculum_path %><div>
+<% end %>
 
 <br>
 
@@ -20,5 +21,7 @@
 
 <br>
 
-<div><%= link_to "delete_menu", menu_path(@menu), method: :delete %></div>
+<% if current_user.admin? %>
+  <div><%= link_to "delete_menu", menu_path(@menu), method: :delete %></div>
+<% end %>
 <%= render "shared/footer" %>

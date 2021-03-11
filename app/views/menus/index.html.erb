@@ -1,7 +1,9 @@
 <%= render "shared/header" %>
 <p>No more spaghetti codes.</p>
 
-<div><%= link_to "new_menu", new_menu_path %></div>
+<% if current_user.admin? %>
+  <div><%= link_to "new_menu", new_menu_path %></div>
+<% end %>
 
 <br>
 
