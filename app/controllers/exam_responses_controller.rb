@@ -1,4 +1,6 @@
 class ExamResponsesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :send_to_root
   before_action :find_exam
   before_action :send_to_exam_new
 
@@ -46,6 +48,12 @@ class ExamResponsesController < ApplicationController
   def send_to_exam_new
     if @exam == nil
       redirect_to new_curriculum_exam_path
+    end
+  end
+
+  def send_to_root
+    unless current_user.admin?
+      redirect_to root_path
     end
   end
 end

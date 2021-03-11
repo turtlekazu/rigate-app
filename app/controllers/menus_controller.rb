@@ -1,8 +1,11 @@
 class MenusController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index,:welcome]
   before_action :send_to_root, only: [:new, :create, :destroy]
 
   def index
+    unless user_signed_in?
+      redirect_to welcome_menus_path
+    end
     @menus = Menu.all
   end
 
@@ -28,6 +31,9 @@ class MenusController < ApplicationController
     @menu = Menu.find(params[:id])
     @menu.destroy
     redirect_to root_path
+  end
+
+  def welcome
   end
 
   private
