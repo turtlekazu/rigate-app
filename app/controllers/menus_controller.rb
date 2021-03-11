@@ -1,4 +1,7 @@
 class MenusController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :send_to_root, only: [:new, :create, :destroy]
+
   def index
     @menus = Menu.all
   end
@@ -31,5 +34,11 @@ class MenusController < ApplicationController
 
   def menu_params
     params.require(:menu).permit(:name, :pasta_name, :image)
+  end
+
+  def send_to_root
+    unless current_user.admin?
+      redirect_to root_path
+    end
   end
 end

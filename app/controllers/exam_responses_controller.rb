@@ -1,8 +1,10 @@
 class ExamResponsesController < ApplicationController
+  before_action :find_exam
+  before_action :send_to_exam_new
+
   def new
     @exam_response = ExamResponse.new
     @curriculum = Curriculum.find(params[:curriculum_id])
-    @exam = Exam.where(curriculum_id: params[:curriculum_id]).last
   end
 
   def create
@@ -17,13 +19,11 @@ class ExamResponsesController < ApplicationController
 
   def edit
     @exam_response = ExamResponse.where(user_id: current_user.id, curriculum_id: params[:curriculum_id]).last
-    @exam = Exam.where(curriculum_id: params[:curriculum_id]).last
     @curriculum = Curriculum.find(params[:curriculum_id])
   end
 
   def update
     @exam_response = ExamResponse.where(user_id: current_user.id, curriculum_id: params[:curriculum_id]).last
-    @exam = Exam.where(curriculum_id: params[:curriculum_id]).last
     @curriculum = Curriculum.find(params[:curriculum_id])
     if @exam_response.update(exam_response_params)
       redirect_to menu_path(@curriculum.menu_id)
@@ -37,5 +37,15 @@ class ExamResponsesController < ApplicationController
   def exam_response_params
     params.require(:exam_response).permit(:is_done, :user_answer_code, :score).merge(user_id: current_user.id,
                                                                                      curriculum_id: params[:curriculum_id])
+  end
+
+  def find_exam
+    @exam = Exam.where(curriculum_id: params[:curriculum_id]).last
+  end
+
+  def send_to_exam_new
+    if @exam == nil
+      redirect_to new_curriculum_exam_path
+    end
   end
 end

@@ -1,4 +1,7 @@
 class CurriculumsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :send_to_root, only: [:new, :create]
+
   def new
     @curriculum = Curriculum.new
     @menus = Menu.all
@@ -23,5 +26,11 @@ class CurriculumsController < ApplicationController
 
   def curriculum_params
     params.require(:curriculum).permit(:name, :menu_id)
+  end
+
+  def send_to_root
+    unless current_user.admin?
+      redirect_to root_path
+    end
   end
 end

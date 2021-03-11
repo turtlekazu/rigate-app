@@ -1,7 +1,7 @@
 class ExamsController < ApplicationController
-  def index
-  end
-
+  before_action :authenticate_user!
+  before_action :send_to_root
+  
   def new
     @exam = Exam.new
     @curriculum = Curriculum.find(params[:curriculum_id])
@@ -22,5 +22,11 @@ class ExamsController < ApplicationController
   def exam_params
     params.require(:exam).permit(:question, :question_code, :answer_code,
                                  :explanation).merge(curriculum_id: params[:curriculum_id])
+  end
+
+  def send_to_root
+    unless current_user.admin?
+      redirect_to root_path
+    end
   end
 end

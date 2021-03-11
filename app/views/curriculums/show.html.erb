@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 <h1><%= @curriculum.name %></h1>
 
-<% if current_user.admin? %>
+<% if user_signed_in? && current_user.admin? %>
   <div>
     <%= link_to 'new_content', new_curriculum_content_path(@curriculum) %>
     <%= link_to 'new_exam', new_curriculum_exam_path(@curriculum) %>

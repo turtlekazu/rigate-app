@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 <h1><%= @menu.name %> <%= @menu.pasta_name %></h1>
 
-<% if current_user.admin? %>
+<% if user_signed_in? && current_user.admin? %>
   <div><%= link_to "new_curriculum", new_curriculum_path %><div>
 <% end %>
 
@@ -9,7 +9,9 @@
 
 <div>
   <% @curriculums.each do |curriculum| %>
-    <% if curriculum.exam_responses == nil || curriculum.exam_responses.where(user_id: current_user.id, curriculum_id: curriculum.id).last == nil %>
+    <% if curriculum.exam_responses == nil || user_signed_in? != true %>
+      <div><%= link_to curriculum.name, curriculum_path(curriculum) %></div>
+    <% elsif curriculum.exam_responses.where(user_id: current_user.id, curriculum_id: curriculum.id).last == nil %>
       <div><%= link_to curriculum.name, curriculum_path(curriculum) %></div>
     <% elsif curriculum.exam_responses.where(user_id: current_user.id, curriculum_id: curriculum.id).last.score > 5 %>
       <div><%= link_to curriculum.name, curriculum_path(curriculum) %>Done</div>
@@ -21,7 +23,7 @@
 
 <br>
 
-<% if current_user.admin? %>
+<% if user_signed_in? && current_user.admin? %>
   <div><%= link_to "delete_menu", menu_path(@menu), method: :delete %></div>
 <% end %>
 <%= render "shared/footer" %>

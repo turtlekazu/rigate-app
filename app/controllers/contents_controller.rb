@@ -1,4 +1,7 @@
 class ContentsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :send_to_root
+
   def new
     @content = Content.new
     @curriculum = Curriculum.find(params[:curriculum_id])
@@ -19,5 +22,11 @@ class ContentsController < ApplicationController
 
   def content_params
     params.require(:content).permit(:title, :text).merge(curriculum_id: params[:curriculum_id])
+  end
+
+  def send_to_root
+    unless current_user.admin?
+      redirect_to root_path
+    end
   end
 end
