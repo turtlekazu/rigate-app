@@ -1,16 +1,18 @@
 <div class="header">
-  <div>
+  <div class="logo">
     <%= link_to root_path do%>
-      <%= image_tag 'rigate_logo.png', :width => '200' %>
+      <%= image_tag 'rigate_logo.png', class: "logo-image" %>
     <% end %>
   </div>
-  <ul class='lists-right'>
-    <% if user_signed_in? %>
-    <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
-    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-    <% else %>
-    <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-    <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-    <% end %>
-  </ul>
+  <div>
+    <ul class='lists-right'>
+      <% if user_signed_in? %>
+      <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>

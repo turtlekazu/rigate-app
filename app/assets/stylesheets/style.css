@@ -1,0 +1,36 @@
+html {
+  font-family: 'M PLUS 1p';
+}
+
+body{
+	margin: 0;
+}
+
+.header {
+  height: 60px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 7px rgba(0,0,0,0.4);
+}
+
+.logo-image {
+  height: 36px;
+  padding: 12px;
+}
+
+.lists-right {
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.footer {
+  height: 40px;
+  width: 100vw;
+  box-shadow: 0 0 7px rgba(0,0,0,0.4);
+  text-align: center;
+  line-height: 40px;
+}
