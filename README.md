@@ -8,41 +8,70 @@
 | encrypted_password | string | null: false               |
 
 ### Association
-- has_one :result
+- has_many :exam_responses
 
 <br>
 
 ## menus テーブル
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
+| Column     | Type   | Options     |
+| ---------- | ------ | ----------- |
+| name       | string | null: false |
+| image      |        |             |
+| pasta_name | string | null: false |
 
 ### Association
-- has_many :contents
+- has_many :curriculums
 
 <br>
 
-## contents テーブル
+## curriculums テーブル
 | Column  | Type    | Options           |
 | ------- | ------- | ----------------- |
 | menu_id | integer | foreign_key: true | 
-| text    | text    | null: false       |
+| name    | string  | null: false       |
 
 ### Association
-- has_many :results
+- has_many   :contents
+- has_one    :exam
+- has_many   :exam_responses
 - belongs_to :menu
 
 <br>
 
-## results テーブル
-| Column     | Type    | Options           |
-| ---------- | ------- | ----------------- |
-| user_id    | integer | foreign_key: true |
-| content_id | integer | foreign_key: true |
-| is_done    | boolean | null: false       |
-| answer     | text    | null: false       |
-| score      | integer | null: false       |
+## contents テーブル
+| Column        | Type    | Options           |
+| ------------- | ------- | ----------------- |
+| curriculum_id | integer | foreign_key: true | 
+| title         | string  | null: false       |
+| text          | text    | null: false       |
+
+### Association
+- belongs_to :curriculum
+
+<br>
+
+## exams テーブル
+| Column        | Type    | Options           |
+| ------------- | ------- | ----------------- |
+| curriculum_id | integer | foreign_key: true | 
+| question      | string  | null: false       |
+| question_code | text    | null: false       |
+| answer_code   | text    | null: false       |
+| explanation   | text    | null: false       |
+
+### Association
+- belongs_to :curriculum
+
+<br>
+
+## exam_responses テーブル
+| Column           | Type    | Options           |
+| ---------------- | ------- | ----------------- |
+| user_id          | integer | foreign_key: true |
+| curriculum_id    | integer | foreign_key: true |
+| user_answer_code | text    | null: false       |
+| score            | integer |                   |
 
 ### Association
 - belongs_to :user
-- belongs_to :content
+- belongs_to :curriculum
