@@ -1,5 +1,9 @@
 <div class="header">
-  <h1><%= link_to 'RIGATE', root_path %></h1>
+  <div>
+    <%= link_to root_path do%>
+      <%= image_tag 'rigate_logo.png', :width => '200' %>
+    <% end %>
+  </div>
   <ul class='lists-right'>
     <% if user_signed_in? %>
     <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
