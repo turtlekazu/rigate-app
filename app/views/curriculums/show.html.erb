@@ -19,7 +19,9 @@
 
 <br>
 
+<% if @exam != nil %>
 <div>
   <%= link_to 'NEXT', new_curriculum_exam_response_path(@curriculum) %>
 </div>
+<% end %>
 <%= render "shared/footer" %>
