@@ -8,8 +8,12 @@
 
 <div>
   <% @curriculums.each do |curriculum| %>
-    <%= link_to curriculum_path(curriculum) do %>
-      <div><%= curriculum.name %></div>
+    <% if curriculum.exam_responses == nil || curriculum.exam_responses.where(user_id: current_user.id, curriculum_id: curriculum.id).last == nil %>
+      <div><%= link_to curriculum.name, curriculum_path(curriculum) %></div>
+    <% elsif curriculum.exam_responses.where(user_id: current_user.id, curriculum_id: curriculum.id).last.score > 5 %>
+      <div><%= link_to curriculum.name, curriculum_path(curriculum) %>Done</div>
+    <% else %>
+      <div><%= link_to curriculum.name, curriculum_path(curriculum) %>Again</div>
     <% end %>
   <% end %>
 </div>
@@ -17,3 +21,4 @@
 <br>
 
 <div><%= link_to "delete_menu", menu_path(@menu), method: :delete %></div>
+<%= render "shared/footer" %>

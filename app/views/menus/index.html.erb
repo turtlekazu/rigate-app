@@ -1,7 +1,9 @@
 <%= render "shared/header" %>
 <p>No more spaghetti codes.</p>
 
-<%= link_to "new_menu", new_menu_path %>
+<div><%= link_to "new_menu", new_menu_path %></div>
+
+<br>
 
 <div class="menu_list">
   <% @menus.each do |menu| %>
@@ -12,3 +14,5 @@
     <% end %>
   <% end %>
 </div>
+
+<%= render "shared/footer" %>
