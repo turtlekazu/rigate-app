@@ -1,13 +1,35 @@
-<h1>Let's Create New ExamResponse</h1>
+<%= render "shared/header" %>
 
-<div class="exam">
-  <div><%= @exam.question %></div>
-  <div><%= @exam.question_code %></div>
-</div>
+<div class="main-long">
+  <div class="main-back-image">
+    <div class="catch-copy">No more spaghetti codes.</div>
+    <div class="exam-board">
+      <div class="menu-name"><%= @menu.name %></div>
+      <div class="menu-pasta-name-content"><%= @menu.pasta_name %></div>
+      <div class="menu-pasta-image-top-content"><%= image_tag @menu.image.variant(resize: '80x80') %></div>
+      <%= link_to curriculum_path(@curriculum) do %>
+        <div class="curriculum-button-mini">
+          <div class="curriculum-name-mini"><%= @curriculum.name %></div>
+        </div>
+      <% end %>
 
-<div class="exam_response">
-  <%= form_with model: [@curriculum, @exam_response], local: true do |f| %>
-    <%= f.text_area   :user_answer_code,  class:'user_answer_code',  placeholder: 'input your answer' %>
-    <%= f.submit 'SUBMIT' %>
-  <% end %>
+      <div class="exam">
+        <div><%= @exam.question %></div>
+        <div><%= @exam.question_code %></div>
+      </div>
+
+      <div class="exam_response">
+        <%= form_with model: [@curriculum, @exam_response], local: true do |f| %>
+          <%= f.text_area   :user_answer_code,  class:'user_answer_code',  placeholder: 'input your answer' %>
+          <label class="submit-button">
+            <div class="next-button">
+              <div class="next-button-text">SUBMIT</div>
+              <%= f.submit 'SUBMIT', class: "hidden" %>
+            </div>
+          </label>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+<%= render "shared/footer" %>
