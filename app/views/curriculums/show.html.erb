@@ -1,27 +1,41 @@
 <%= render "shared/header" %>
-<h1><%= @curriculum.name %></h1>
 
-<% if user_signed_in? && current_user.admin? %>
-  <div>
-    <%= link_to 'new_content', new_curriculum_content_path(@curriculum) %>
-    <%= link_to 'new_exam', new_curriculum_exam_path(@curriculum) %>
-  </div>
-<% end %>
-
-<br>
-
-<div>
-  <% @contents.each do |content| %>
-    <div><%= content.title %></div>
-    <div><%= content.text %></div>
+<div class="main">
+  <% if user_signed_in? && current_user.admin? %>
+    <ul class="new-link-list">
+      <li class="new-link"><%= link_to 'new_content', new_curriculum_content_path(@curriculum) %></li>
+      <li class="new-link"><%= link_to 'new_exam', new_curriculum_exam_path(@curriculum) %></li>
+    </ul>
   <% end %>
-</div>
+  
+  <div class="main-back-image">
+    <div class="catch-copy">No more spaghetti codes.</div>
+    <div class="content-board">
+      <div class="menu-name"><%= @menu.name %></div>
+      <div class="menu-pasta-name-content"><%= @menu.pasta_name %></div>
+      <div class="menu-pasta-image-top-content"><%= image_tag @menu.image.variant(resize: '80x80') %></div>
+      <%= link_to curriculum_path(@curriculum) do %>
+        <div class="curriculum-button-mini">
+          <div class="curriculum-name-mini"><%= @curriculum.name %></div>
+        </div>
+      <% end %>
+      <div class="content-each-board">
+        <div class="contents-list">
+          <% @contents.each do |content| %>
+            <div class="content-title"><%= content.title %></div>
+            <div class="content-text"><%= content.text %></div>
+          <% end %>
+        </div>
+      </div>
 
-<br>
-
-<% if @exam != nil %>
-<div>
-  <%= link_to 'NEXT', new_curriculum_exam_response_path(@curriculum) %>
+      <% if @exam != nil %>
+        <%= link_to new_curriculum_exam_response_path(@curriculum) do %>
+          <div class="next-button">
+            <div class="next-button-text">NEXT→</div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
-<% end %>
 <%= render "shared/footer" %>

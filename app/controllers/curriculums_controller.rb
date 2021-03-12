@@ -20,6 +20,7 @@ class CurriculumsController < ApplicationController
     @curriculum = Curriculum.find(params[:id])
     @contents = @curriculum.contents.all
     @exam = @curriculum.exam
+    @menu = @curriculum.menu
   end
 
   private

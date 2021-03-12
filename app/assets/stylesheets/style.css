@@ -7,6 +7,7 @@ body{
 }
 
 a {
+  color: #4c4c4c;
   text-decoration:none; 
 }
 
@@ -33,13 +34,13 @@ a {
 
 .main {
   width: 100vw;
-  height: 88vh;
+  height: calc(100vh - 60px - 40px);
   display: flex;
   align-items: center;
   position: relative;
 }
 
-.new-menu-link {
+.new-link {
   position: absolute;
   right: 20px;
   top: 5px;
@@ -47,8 +48,10 @@ a {
 
 .main-back-image {
   height: 90%;
+  width: 100vw;
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
 }
 
@@ -87,6 +90,9 @@ a {
   height: 30px;
   line-height: 30px;
   color: #4c4c4c;
+  position: absolute;
+  left: 5px;
+  top: 5px;
 }
 
 .menu-pasta-name {
@@ -98,10 +104,130 @@ a {
   bottom: 10px;
 }
 
+.menu-pasta-name-content {
+  font-family: 'Monoton';
+  font-size: 25px;
+  color: #006e00;
+  position: absolute;
+  right: 30px;
+  top: 15px;
+}
+
 .menu-pasta-image {
   position: absolute;
   left: 30px;
   bottom: 5px;
+}
+
+.menu-pasta-image-top {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+}
+
+.menu-pasta-image-top-content {
+  position: absolute;
+  right: 30px;
+  top: 70px;
+}
+
+.curriculum-board {
+  height: 400px;
+  width: 750px;
+  border-radius: 20px;
+  background-color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+}
+
+.curriculum-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.curriculum-button {
+  height: 65px;
+  width: 360px;
+  border-radius: 20px;
+  margin: 15px;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+.curriculum-button-mini {
+  height: 40px;
+  width: 240px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+.curriculum-name {
+  margin: 0 auto;
+  line-height: 65px;
+  color: white;
+  font-size: 20px;
+}
+
+.curriculum-name-mini {
+  margin: 0 auto;
+  line-height: 40px;
+  color: white;
+  font-size: 18px;
+}
+
+.content-board {
+  margin-top: 60px;
+  height: 450px;
+  width: 1200px;
+  border-radius: 20px;
+  background-color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+}
+
+.content-each-board {
+  height: 350px;
+  width: 720px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+}
+
+.contents-list {
+}
+
+.content-title {
+}
+
+.content-text {
+}
+
+.next-button {
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  height: 35px;
+  width: 100px;
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.next-button-text {
+  color: white;
+  font-size: 18px;
+  font-family: 'Montserrat';
+  line-height: 35px;
 }
 
 .footer {
