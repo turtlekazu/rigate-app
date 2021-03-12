@@ -1,7 +1,7 @@
 <h1>Let's Edit New ExamResponse</h1>
 
 <div class="exam">
-  <div><%= @exam_response.user_answer_code %></div>
+  <div><%= markdown(@exam_response.user_answer_code).html_safe %></div>
   <div><%= @exam.answer_code %></div>
   <div><%= @exam.explanation %></div>
 </div>
