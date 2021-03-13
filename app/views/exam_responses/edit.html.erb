@@ -1,14 +1,23 @@
-<h1>Let's Edit New ExamResponse</h1>
+<%= render "shared/header" %>
 
-<div class="exam">
-  <div><%= markdown(@exam_response.user_answer_code).html_safe %></div>
-  <div><%= @exam.answer_code %></div>
-  <div><%= @exam.explanation %></div>
+<div class="main">
+  <div class="main-back-image">
+    <div class="catch-copy">No more spaghetti codes.</div>
+
+    <div class="exam">
+      <div><%= raw markdown(@exam_response.user_answer_code) %></div>
+      <div><%= raw markdown("# Title") %></div>
+      <div><%= @exam.answer_code %></div>
+      <div><%= @exam.explanation %></div>
+    </div>
+
+    <div class="exam_response">
+      <%= form_with model: [@curriculum, @exam_response], local: true do |f| %>
+        <%= f.number_field   :score,  class:'user_answer_code',  min: 0, max: 10 %>
+        <%= f.submit 'SUBMIT' %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
-<div class="exam_response">
-  <%= form_with model: [@curriculum, @exam_response], local: true do |f| %>
-    <%= f.number_field   :score,  class:'user_answer_code',  min: 0, max: 10 %>
-    <%= f.submit 'SUBMIT' %>
-  <% end %>
-</div>
+<%= render "shared/footer" %>
