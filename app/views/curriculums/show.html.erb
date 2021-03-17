@@ -11,14 +11,15 @@
   <div class="main-back-image">
     <div class="catch-copy">No more spaghetti codes.</div>
     <div class="content-board">
+
       <div class="menu-name"><%= @menu.name %></div>
       <div class="menu-pasta-name-content"><%= @menu.pasta_name %></div>
       <div class="menu-pasta-image-top-content"><%= image_tag @menu.image.variant(resize: '80x80') %></div>
-      <%= link_to curriculum_path(@curriculum) do %>
-        <div class="curriculum-button-mini">
-          <div class="curriculum-name-mini"><%= @curriculum.name %></div>
-        </div>
-      <% end %>
+
+      <div class="curriculum-button-mini">
+        <div class="curriculum-name-mini"><%= @curriculum.name %></div>
+      </div>
+      
       <div class="content-each-board">
         <div class="contents-list">
           <% @contents.each do |content| %>

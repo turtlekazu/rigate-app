@@ -4,14 +4,14 @@
   <div class="main-back-image">
     <div class="catch-copy">No more spaghetti codes.</div>
     <div class="exam-board">
+    
       <div class="menu-name"><%= @menu.name %></div>
       <div class="menu-pasta-name-content"><%= @menu.pasta_name %></div>
       <div class="menu-pasta-image-top-content"><%= image_tag @menu.image.variant(resize: '80x80') %></div>
-      <%= link_to curriculum_path(@curriculum) do %>
-        <div class="curriculum-button-mini">
-          <div class="curriculum-name-mini"><%= @curriculum.name %></div>
-        </div>
-      <% end %>
+
+      <div class="curriculum-button-mini">
+        <div class="curriculum-name-mini"><%= @curriculum.name %></div>
+      </div>
 
       <div class="exam">
         <div><%= @exam.question %></div>
@@ -24,7 +24,7 @@
           <label class="submit-button">
             <div class="next-button">
               <div class="next-button-text">SUBMIT</div>
-              <%= f.submit 'SUBMIT', class: "hidden" %>
+              <%= f.submit class: "hidden" %>
             </div>
           </label>
         <% end %>
