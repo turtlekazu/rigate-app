@@ -36,6 +36,56 @@ outline: none;
   list-style: none;
 }
 
+.h2-title {
+  color: white;
+  text-align: center;
+}
+
+.sign-in-up {
+  color: white;
+  margin-top: 30px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.field {
+  margin: 10px;
+}
+
+.shared-links {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.email-field {
+  height: 40px;
+  width: 300px;
+  border-radius: 20px;
+  padding: 0 10px 0;
+  border: none;
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.4) inset;
+  text-align: center;
+  font-family: 'Montserrat';
+}
+
+.password-field {
+  height: 40px;
+  width: 300px;
+  border-radius: 20px;
+  padding: 0 10px 0;
+  border: none;
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.4) inset;
+  text-align: center;
+}
+
+.remember-me {
+  border: none;
+}
+
 .main {
   width: 100vw;
   height: calc(100vh - 60px - 40px);
@@ -269,7 +319,6 @@ outline: none;
   position: relative;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   flex-direction: column;
   box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
 }
@@ -310,7 +359,8 @@ outline: none;
   height: 180px;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 0 4px 0 rgba(0,0,0,0.4) inset;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  background-color: lightyellow;
 }
 
 .user-answer-code {
@@ -370,6 +420,15 @@ outline: none;
   text-align: center;
 }
 
+.login-button {
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  height: 50px;
+  width: 150px;
+  border-radius: 20px;
+  text-align: center;
+  margin: 50px auto 0;
+}
+
 .start-button {
   box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
   height: 50px;
@@ -383,6 +442,12 @@ outline: none;
   font-size: 18px;
   font-family: 'Montserrat';
   line-height:  35px;
+}
+
+.login-button-text {
+  color: white;
+  font-size: 18px;
+  line-height:  50px;
 }
 
 .start-button-text {
