@@ -140,7 +140,8 @@ a {
 }
 
 .curriculum-board {
-  height: 400px;
+  margin-top: 30px;
+  height: 75%;
   width: 750px;
   border-radius: 20px;
   background-color: white;
@@ -195,7 +196,7 @@ a {
 
 .content-board {
   margin-top: 60px;
-  height: 450px;
+  height: 80%;
   width: 1200px;
   border-radius: 20px;
   background-color: white;
@@ -322,11 +323,40 @@ a {
   text-align: center;
 }
 
+.start-button {
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  height: 50px;
+  width: 150px;
+  border-radius: 20px;
+  text-align: center;
+}
+
 .next-button-text {
   color: white;
   font-size: 18px;
   font-family: 'Montserrat';
-  line-height: 35px;
+  line-height:  35px;
+}
+
+.start-button-text {
+  color: white;
+  font-size: 18px;
+  line-height:  50px;
+}
+
+.introduction {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.introduction-text {
+  font-size: 20px;
+  color: white;
+  width: 610px;
+  margin-bottom: 60px;
 }
 
 .submit-button {
@@ -349,7 +379,7 @@ a {
   border-radius: 20px;
   text-align: center;
   border: none;
-  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.4) inset;
   font-size: 16px;
   font-family: 'Montserrat';
 }
