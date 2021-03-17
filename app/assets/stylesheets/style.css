@@ -11,12 +11,8 @@ a {
   text-decoration:none; 
 }
 
-input[type="text"],
-input[type="number"],
-input[type="password"],
-textarea,
-select {
-    outline: none;
+*:focus {
+outline: none;
 }
 
 .header {
