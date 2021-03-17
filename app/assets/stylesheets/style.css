@@ -176,7 +176,7 @@ a {
   text-align: center;
   position: absolute;
   top: 15px;
-  left: calc(50vw - 180px);
+  left: calc(50vw - 160px);
 }
 
 .curriculum-name {
@@ -238,6 +238,79 @@ a {
   box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
 }
 
+.exam-response-board {
+  margin-top: 60px;
+  height: calc(150vh - 60px - 40px - 180px);
+  width: 1200px;
+  border-radius: 20px;
+  background-color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+}
+
+.exam {
+  display: flex;
+  justify-content: center;
+}
+
+.exam-response {
+  display: flex;
+  justify-content: center;
+  margin-top: 110px;
+}
+
+.exam-explanation-title {
+  font-size: 20px;
+  margin: 50px 0 10px;
+  width: 750px;
+}
+
+.exam-explanation {
+  font-size: 20px;
+  width: 750px;
+  height: 180px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4) inset;
+}
+
+.code-block-outer {
+  height: 380px;
+  width: 360px;
+  margin: 0 40px 0;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  background-color: #eee;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.code-block {
+  height: 300px;
+  width: 300px;
+  margin-top: 20px;
+  background-color: #272822;
+  padding: 1px 14px 1px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4) inset;
+}
+
+.code-block-title {
+  width: 300px;
+  margin-top: 10px;
+}
+
+.code-block-title-red {
+  width: 300px;
+  margin-top: 10px;
+  color: #CB262C;
+}
+
 .next-button {
   box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
   height: 35px;
@@ -258,6 +331,27 @@ a {
 
 .submit-button {
   cursor: pointer;
+}
+
+.score {
+  position: absolute;
+  bottom: 90px;
+  right: 30px;
+}
+
+.score-text {
+  margin: 10px;
+}
+
+.score-field {
+  height: 30px;
+  width: 70px;
+  border-radius: 20px;
+  text-align: center;
+  border: none;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  font-size: 16px;
+  font-family: 'Montserrat';
 }
 
 .footer {
