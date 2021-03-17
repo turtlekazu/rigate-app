@@ -60,10 +60,19 @@ outline: none;
   position: relative;
 }
 
-.new-link {
+.new-link-list {
+  margin: 0;
+  padding: 0;
   position: absolute;
   right: 20px;
-  top: 5px;
+  top: 2px;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.new-link {
+  margin: 0 10px 0;
 }
 
 .main-back-image {
@@ -420,6 +429,12 @@ outline: none;
   box-shadow: 0 0 4px 0 rgba(0,0,0,0.4) inset;
   font-size: 16px;
   font-family: 'Montserrat';
+}
+
+.error-messages {
+  text-align: center;
+  list-style: none;
+  color: #CB262C;
 }
 
 .footer {
