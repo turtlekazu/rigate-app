@@ -265,7 +265,7 @@ a {
 
 .exam-explanation-title {
   font-size: 20px;
-  margin: 50px 0 10px;
+  margin: 45px 0 10px;
   width: 750px;
 }
 
@@ -275,7 +275,7 @@ a {
   height: 180px;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4) inset;
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.4) inset;
 }
 
 .code-block-outer {
