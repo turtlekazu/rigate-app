@@ -5,6 +5,7 @@ function viewContents() {
     return;
   }
 
+  const nextButton = document.getElementById('next_button');
   const firstContent = document.getElementById('contents_list').firstElementChild;
   let currentContent = firstContent;
   if (firstContent == null) {
@@ -30,7 +31,11 @@ function viewContents() {
   function switchArrow() {
     if (currentContent.nextElementSibling == null) {
       arrowR.style.display = 'none';
-    } else { arrowR.style.display = 'block'; }
+      nextButton.style.display = 'block';
+    } else {
+      arrowR.style.display = 'block'; 
+      nextButton.style.display = 'none';
+    }
     if (currentContent.previousElementSibling == null) {
       arrowL.style.display = 'none';
     } else { arrowL.style.display = 'block'; }
