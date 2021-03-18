@@ -26,11 +26,11 @@
           <div class="exam-form">
             <div class="code-block-outer">
               <div class="code-block-title">あなたの解答</div>
-              <div><%= f.text_area :user_answer_code, class:'user-answer-code',  placeholder: 'input your answer' %></div>
+              <div><%= f.text_area :user_answer_code, class:'user-answer-code', id: 'user_answer_code', placeholder: 'input your answer' %></div>
             </div>
             <div class="code-block-outer">
               <div class="code-block-title">あなたの解答(Markdown)</div>
-              <div class="code-block"><%= markdown("```ruby \n#{@exam.question_code}\n```") %></div>
+              <div class="code-block" id="code_markdown"></div>
             </div>
           </div>
           <label class="submit-button">
