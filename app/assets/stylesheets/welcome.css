@@ -1,0 +1,28 @@
+.introduction {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.introduction-text {
+  font-size: 20px;
+  color: white;
+  width: 610px;
+  margin-bottom: 60px;
+}
+
+.start-button {
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  height: 50px;
+  width: 150px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.start-button-text {
+  color: white;
+  font-size: 18px;
+  line-height:  50px;
+}
