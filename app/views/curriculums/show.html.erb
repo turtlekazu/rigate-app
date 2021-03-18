@@ -21,10 +21,15 @@
       </div>
       
       <div class="content-each-board">
-        <div class="contents-list">
+        <%= image_tag 'Arrow.png', class:"arrow-left", id: "arrow_left", width: '20' %>
+        <%= image_tag 'Arrow.png', class:"arrow-right", id: "arrow_right", width: '20' %>
+
+        <div class="contents-list" id="contents_list">
           <% @contents.each do |content| %>
-            <div class="content-title"><%= content.title %></div>
-            <div class="content-text"><%= content.text %></div>
+            <div class="content-each">
+              <div class="content-title"><%= content.title %></div>
+              <div class="content-text"><%= content.text %></div>
+            </div>
           <% end %>
         </div>
       </div>

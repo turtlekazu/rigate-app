@@ -285,15 +285,26 @@ outline: none;
   margin-top: 50px;
   background-color: #f9f9f9;
   box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  position: relative;
 }
 
-.contents-list {
+.content-each {
+  display: none;
 }
 
-.content-title {
+.arrow-left {
+  position: absolute;
+  left: -40px;
+  top: 135px;
+  cursor: pointer;
 }
 
-.content-text {
+.arrow-right {
+  transform: scale(-1, 1);
+  position: absolute;
+  left: calc(720px + 20px);
+  top: 135px;
+  cursor: pointer;
 }
 
 .exam-board {
