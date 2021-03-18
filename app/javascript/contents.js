@@ -11,36 +11,30 @@ function viewContents() {
     return;
   }
   currentContent.style.display = 'block';
-  if (currentContent.nextElementSibling == null) {
-    arrowR.style.display = 'none';
-  } else { arrowR.style.display = 'block'; }
-  if (currentContent.previousElementSibling == null) {
-    arrowL.style.display = 'none';
-  } else { arrowL.style.display = 'block'; }
+  switchArrow();
 
   arrowR.addEventListener("click", () => {
     currentContent.style.display = 'none';
     currentContent = currentContent.nextElementSibling;
     currentContent.style.display = 'block';
-    if (currentContent.nextElementSibling == null) {
-      arrowR.style.display = 'none';
-    } else { arrowR.style.display = 'block'; }
-    if (currentContent.previousElementSibling == null) {
-      arrowL.style.display = 'none';
-    } else { arrowL.style.display = 'block'; }
+    switchArrow();
   });
 
   arrowL.addEventListener("click", () => {
     currentContent.style.display = 'none';
     currentContent = currentContent.previousElementSibling;
     currentContent.style.display = 'block';
+    switchArrow();
+  });
+
+  function switchArrow() {
     if (currentContent.nextElementSibling == null) {
       arrowR.style.display = 'none';
     } else { arrowR.style.display = 'block'; }
     if (currentContent.previousElementSibling == null) {
       arrowL.style.display = 'none';
     } else { arrowL.style.display = 'block'; }
-  });
+  }
 }
 
 
