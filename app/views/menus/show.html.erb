@@ -1,29 +1,31 @@
 <%= render "shared/header" %>
-<h1><%= @menu.name %> <%= @menu.pasta_name %></h1>
 
-<% if user_signed_in? && current_user.admin? %>
-  <div><%= link_to "new_curriculum", new_curriculum_path %><div>
-<% end %>
-
-<br>
-
-<div>
-  <% @curriculums.each do |curriculum| %>
-    <% if curriculum.exam_responses == nil || user_signed_in? != true %>
-      <div><%= link_to curriculum.name, curriculum_path(curriculum) %></div>
-    <% elsif curriculum.exam_responses.where(user_id: current_user.id, curriculum_id: curriculum.id).last == nil %>
-      <div><%= link_to curriculum.name, curriculum_path(curriculum) %></div>
-    <% elsif curriculum.exam_responses.where(user_id: current_user.id, curriculum_id: curriculum.id).last.score > 5 %>
-      <div><%= link_to curriculum.name, curriculum_path(curriculum) %>Done</div>
-    <% else %>
-      <div><%= link_to curriculum.name, curriculum_path(curriculum) %>Again</div>
-    <% end %>
+<div class="main">
+  <% if user_signed_in? && current_user.admin? %>
+    <ul class="new-link-list">
+      <li class="new-link"><%= link_to "new_curriculum", new_curriculum_path %></li>
+      <li class="new-link"><%= link_to "delete_menu", menu_path(@menu), method: :delete %></li>
+    </ul>
   <% end %>
+
+  <div class="main-back-image">
+    <div class="catch-copy">No more spaghetti codes.</div>
+
+    <div class="curriculum-board">
+      <div class="menu-name"><%= @menu.name %></div>
+      <div class="menu-pasta-name"><%= @menu.pasta_name %></div>
+      <div class="menu-pasta-image-top"><%= image_tag @menu.image.variant(resize: '80x80') %></div>
+      <div class="curriculum-list">
+        <% @curriculums.each do |curriculum| %>
+          <%= link_to curriculum_path(curriculum) do %>
+            <div class="curriculum-button">
+              <div class="curriculum-name"><%= curriculum.name %></div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
-<br>
-
-<% if user_signed_in? && current_user.admin? %>
-  <div><%= link_to "delete_menu", menu_path(@menu), method: :delete %></div>
-<% end %>
 <%= render "shared/footer" %>

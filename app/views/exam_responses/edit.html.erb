@@ -1,14 +1,50 @@
-<h1>Let's Edit New ExamResponse</h1>
+<%= render "shared/header" %>
 
-<div class="exam">
-  <div><%= @exam_response.user_answer_code %></div>
-  <div><%= @exam.answer_code %></div>
-  <div><%= @exam.explanation %></div>
+<div class="main-long">
+  <div class="main-back-image">
+    <div class="catch-copy">No more spaghetti codes.</div>
+    
+    <div class="exam-response-board">
+
+      <div class="menu-name"><%= @menu.name %></div>
+      <div class="menu-pasta-name-content"><%= @menu.pasta_name %></div>
+      <div class="menu-pasta-image-top-content"><%= image_tag @menu.image.variant(resize: '80x80') %></div>
+
+      <div class="curriculum-button-mini">
+        <div class="curriculum-name-mini"><%= @curriculum.name %></div>
+      </div>
+
+      <div class="exam-response">
+        <div class="code-block-outer">
+          <div class="code-block-title">あなたの解答</div>
+          <div class="code-block"><%= markdown("```ruby \n#{@exam_response.user_answer_code}\n```") %></div>
+        </div>
+        <div class="code-block-outer">
+          <div class="code-block-title-red">模範解答</div>
+          <div class="code-block"><%= markdown("```ruby \n#{@exam.answer_code}\n```") %></div>
+        </div>
+      </div>
+      <div class="exam-explanation-title">解説</div>
+      <div class="exam-explanation">
+        <div><%= @exam.explanation %></div>
+      </div>
+      <div class="exam-response-finish">
+        <%= form_with model: [@curriculum, @exam_response], local: true do |f| %>
+          <div class="score">
+            <div class='score-text'>自己採点</div>
+            <%= f.number_field :score, class:'score-field', min: 0, max: 10, value: 0 %>
+            <span>点</span>
+          </div>
+          <label class="submit-button">
+              <div class="next-button">
+                <div class="next-button-text">FINISH</div>
+                <%= f.submit class: "hidden" %>
+              </div>
+            </label>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="exam_response">
-  <%= form_with model: [@curriculum, @exam_response], local: true do |f| %>
-    <%= f.number_field   :score,  class:'user_answer_code',  min: 0, max: 10 %>
-    <%= f.submit 'SUBMIT' %>
-  <% end %>
-</div>
+<%= render "shared/footer" %>

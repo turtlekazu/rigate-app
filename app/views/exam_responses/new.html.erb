@@ -1,13 +1,50 @@
-<h1>Let's Create New ExamResponse</h1>
+<%= render "shared/header" %>
 
-<div class="exam">
-  <div><%= @exam.question %></div>
-  <div><%= @exam.question_code %></div>
-</div>
+<div class="main-very-long">
+  <div class="main-back-image">
+    <div class="catch-copy">No more spaghetti codes.</div>
+    <div class="exam-board">
+    
+      <div class="menu-name"><%= @menu.name %></div>
+      <div class="menu-pasta-name-content"><%= @menu.pasta_name %></div>
+      <div class="menu-pasta-image-top-content"><%= image_tag @menu.image.variant(resize: '80x80') %></div>
 
-<div class="exam_response">
-  <%= form_with model: [@curriculum, @exam_response], local: true do |f| %>
-    <%= f.text_area   :user_answer_code,  class:'user_answer_code',  placeholder: 'input your answer' %>
-    <%= f.submit 'SUBMIT' %>
-  <% end %>
+      <div class="curriculum-button-mini">
+        <div class="curriculum-name-mini"><%= @curriculum.name %></div>
+      </div>
+
+      <div class="exam-area">
+        <div class="exam">
+          <div class="exam-question"><%= @exam.question %></div>
+          <div class="code-block-outer">
+            <div class="code-block-title">問題</div>
+            <div class="code-block"><%= markdown("```ruby \n#{@exam.question_code}\n```") %></div>
+          </div>
+        </div>
+
+        <%= form_with model: [@curriculum, @exam_response], local: true do |f| %>
+          <div class="exam-form">
+            <div class="code-block-outer">
+              <div class="code-block-title">あなたの解答</div>
+              <div><%= f.text_area :user_answer_code, class:'user-answer-code',  placeholder: 'input your answer' %></div>
+            </div>
+            <div class="code-block-outer">
+              <div class="code-block-title">あなたの解答(Markdown)</div>
+              <div class="code-block"><%= markdown("```ruby \n#{@exam.question_code}\n```") %></div>
+            </div>
+          </div>
+          <label class="submit-button">
+            <div class="next-button">
+              <div class="next-button-text">SUBMIT</div>
+              <%= f.submit class: "hidden" %>
+            </div>
+          </label>
+
+          <%= render 'shared/error_messages', model: f.object %>
+        <% end %>
+        
+      </div>
+    </div>
+  </div>
 </div>
+<%= render "shared/footer" %>
