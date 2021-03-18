@@ -1,0 +1,21 @@
+.content-board {
+  margin-top: 60px;
+  height: 80%;
+  width: 1200px;
+  border-radius: 20px;
+  background-color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+}
+
+.content-each-board {
+  height: 350px;
+  width: 720px;
+  margin-top: 50px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+}

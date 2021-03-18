@@ -1,0 +1,65 @@
+.menu-list {
+  margin: 0 auto 0;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu-tile {
+  margin: 10px;
+  width: 400px;
+  height: 150px;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.menu-name {
+  font-size: 20px;
+  padding: 12px 20px;
+  width: 300px;
+  height: 30px;
+  line-height: 30px;
+  color: #4c4c4c;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+
+.menu-pasta-name {
+  font-family: 'Monoton';
+  font-size: 25px;
+  color: #006e00;
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+
+.menu-pasta-name-content {
+  font-family: 'Monoton';
+  font-size: 25px;
+  color: #006e00;
+  position: absolute;
+  right: 30px;
+  top: 15px;
+}
+
+.menu-pasta-image {
+  position: absolute;
+  left: 30px;
+  bottom: 5px;
+}
+
+.menu-pasta-image-top {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+}
+
+.menu-pasta-image-top-content {
+  position: absolute;
+  right: 30px;
+  top: 70px;
+}

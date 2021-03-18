@@ -1,0 +1,133 @@
+.exam-board {
+  margin-top: 60px;
+  height: calc(180vh - 60px - 40px - 180px);
+  width: 1200px;
+  border-radius: 20px;
+  background-color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+}
+
+.exam-response-board {
+  margin-top: 60px;
+  height: calc(150vh - 60px - 40px - 180px);
+  width: 1200px;
+  border-radius: 20px;
+  background-color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+}
+
+.exam {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.exam-question {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.exam-form {
+  display: flex;
+  justify-content: center;
+}
+
+.exam-response {
+  display: flex;
+  justify-content: center;
+  margin-top: 110px;
+}
+
+.exam-explanation-title {
+  font-size: 16px;
+  margin: 45px 0 10px;
+  width: 750px;
+}
+
+.exam-explanation {
+  font-size: 16px;
+  width: 750px;
+  height: 180px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  background-color: lightyellow;
+}
+
+.user-answer-code {
+  height: 280px;
+  width: 300px;
+  margin-top: 15px;
+  border: none;
+  resize: none;
+  overflow: scroll;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.4) inset;
+}
+
+.code-block-outer {
+  height: 360px;
+  width: 340px;
+  margin: 0 40px 0;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  background-color: #eee;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.code-block {
+  height: 300px;
+  width: 300px;
+  margin-top: 15px;
+  background-color: #272822;
+  padding: 1px 14px 1px;
+  border-radius: 5px;
+  overflow: scroll;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4) inset;
+}
+
+.code-block-title {
+  width: 300px;
+  margin-top: 10px;
+}
+
+.code-block-title-red {
+  width: 300px;
+  margin-top: 10px;
+  color: #CB262C;
+}
+
+.score {
+  position: absolute;
+  bottom: 90px;
+  right: 30px;
+}
+
+.score-text {
+  margin: 10px;
+}
+
+.score-field {
+  height: 30px;
+  width: 70px;
+  border-radius: 20px;
+  text-align: center;
+  border: none;
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.4) inset;
+  font-size: 16px;
+  font-family: 'Montserrat';
+}
