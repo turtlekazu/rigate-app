@@ -285,15 +285,26 @@ outline: none;
   margin-top: 50px;
   background-color: #f9f9f9;
   box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  position: relative;
 }
 
-.contents-list {
+.content-each {
+  display: none;
 }
 
-.content-title {
+.arrow-left {
+  position: absolute;
+  left: -40px;
+  top: 135px;
+  cursor: pointer;
 }
 
-.content-text {
+.arrow-right {
+  transform: scale(-1, 1);
+  position: absolute;
+  left: calc(720px + 20px);
+  top: 135px;
+  cursor: pointer;
 }
 
 .exam-board {
@@ -355,22 +366,22 @@ outline: none;
 
 .exam-explanation {
   font-size: 16px;
-  width: 750px;
+  width: 730px;
   height: 180px;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
-  background-color: lightyellow;
+  background-color: #f9f9f9;
 }
 
 .user-answer-code {
-  height: 280px;
-  width: 300px;
+  height: 260px;
+  width: 280px;
   margin-top: 15px;
   border: none;
   resize: none;
   overflow: scroll;
-  padding: 10px;
+  padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 4px 0 rgba(0,0,0,0.4) inset;
 }
@@ -391,7 +402,7 @@ outline: none;
   height: 300px;
   width: 300px;
   margin-top: 15px;
-  background-color: #272822;
+  background-color: #23241F;
   padding: 1px 14px 1px;
   border-radius: 5px;
   overflow: scroll;

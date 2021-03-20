@@ -17,7 +17,7 @@
       <div class="exam-response">
         <div class="code-block-outer">
           <div class="code-block-title">あなたの解答</div>
-          <div class="code-block"><%= markdown("```ruby \n#{@exam_response.user_answer_code}\n```") %></div>
+          <div class="code-block"><%= markdown("#{@exam_response.user_answer_code}") %></div>
         </div>
         <div class="code-block-outer">
           <div class="code-block-title-red">模範解答</div>

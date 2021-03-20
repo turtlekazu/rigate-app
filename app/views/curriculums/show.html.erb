@@ -21,17 +21,22 @@
       </div>
       
       <div class="content-each-board">
-        <div class="contents-list">
+        <%= image_tag 'Arrow.png', class:"arrow-left", id: "arrow_left", width: '20' %>
+        <%= image_tag 'Arrow.png', class:"arrow-right", id: "arrow_right", width: '20' %>
+
+        <div class="contents-list" id="contents_list">
           <% @contents.each do |content| %>
-            <div class="content-title"><%= content.title %></div>
-            <div class="content-text"><%= content.text %></div>
+            <div class="content-each">
+              <div class="content-title"><%= content.title %></div>
+              <div class="content-text"><%= content.text %></div>
+            </div>
           <% end %>
         </div>
       </div>
 
       <% if @exam != nil %>
         <%= link_to new_curriculum_exam_response_path(@curriculum) do %>
-          <div class="next-button">
+          <div class="next-button" id="next_button">
             <div class="next-button-text">NEXT→</div>
           </div>
         <% end %>
