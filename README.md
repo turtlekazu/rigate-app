@@ -145,9 +145,6 @@ Rigate(リガーテ)は、美しく読みやすいコードを書くコツを、
 - belongs_to :user
 - belongs_to :curriculum
 
-
-# 注意事項
-
 # 文責
 - 作成者：turtlekazu
 - Email：turtlekazu@icloud.com
