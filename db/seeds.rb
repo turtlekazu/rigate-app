@@ -1,7 +1,7 @@
 # coding: utf-8
 
 menu1 = Menu.new(name: "見た目の改善", pasta_name: "FarFalle")
-menu1.image.attach(io: File.open('app/assets/images/FarFalle.png'), filename: 'FarFalle.png')
+menu1.image.attach(io: File.open('app/assets/images/Farfalle.png'), filename: 'FarFalle.png')
 menu1.save!
 
 menu2 = Menu.new(name: "ループとロジック", pasta_name: "Fusilli")
