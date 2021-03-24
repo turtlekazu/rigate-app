@@ -35,6 +35,17 @@
   line-height: 41px;
 }
 
+.start-button:hover {
+  height: 54px;
+  width: 158px;
+  border-radius: 22px;
+}
+
+.start-button:hover > .start-button-text {
+  font-size: 19px;
+  line-height:  54px;
+}
+
 .arrow-left:hover {
   transform:scale(1.2,1.2);
 }
