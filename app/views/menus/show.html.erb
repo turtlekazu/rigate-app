@@ -19,7 +19,7 @@
         <% @curriculums.each do |curriculum| %>
           <%= link_to curriculum_path(curriculum) do %>
             <div class="curriculum-button">
-              <% if curriculum.exam_responses.find_by(user_id: current_user.id) != nil %>
+              <% if curriculum.exam_responses.find_by(user_id: current_user.id) != nil && curriculum.exam_responses.find_by(user_id: current_user.id).score != nil %>
                 <% if curriculum.exam_responses.find_by(user_id: current_user.id).score > 5 %>
                   <div class="curriculum-done-flag">完了</div>
                 <% else %>
