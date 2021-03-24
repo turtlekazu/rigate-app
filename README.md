@@ -1,4 +1,4 @@
-![logo-image](https://user-images.githubusercontent.com/77393576/111975768-4f55eb80-8b44-11eb-9ccc-a5afd6f9e6d2.png)
+![logo-image](https://user-images.githubusercontent.com/77393576/112266028-d1662180-8cb6-11eb-92b1-af51f1e3cefd.png)
 
 
 # Rigate
