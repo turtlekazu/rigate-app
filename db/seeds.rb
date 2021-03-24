@@ -59,3 +59,4 @@ curriculum = Curriculum.find_by(name: "エラー処理")
 Exam.create!(question: "以下のコードを分かりやすく命名してください", question_code: "def test\nputs question\nend", answer_code:"def test\nputs answer\nend", explanation:"explain", curriculum_id: curriculum.id)
 
 User.create!(nickname: "admin", email: "admin@admin", password: "adminadmin", password_confirmation: "adminadmin", admin: 1)
+User.create!(nickname: "rigate", email: "rigate@test", password: "shortpasta", password_confirmation: "shortpasta", admin: 0)
