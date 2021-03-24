@@ -1,11 +1,9 @@
 class MenusController < ApplicationController
-  before_action :authenticate_user!, except: [:index,:welcome]
+  before_action :authenticate_user!, except: [:index, :welcome]
   before_action :send_to_root, only: [:new, :create, :destroy]
 
   def index
-    unless user_signed_in?
-      redirect_to welcome_menus_path
-    end
+    redirect_to welcome_menus_path unless user_signed_in?
     @menus = Menu.all
   end
 
@@ -43,8 +41,6 @@ class MenusController < ApplicationController
   end
 
   def send_to_root
-    unless current_user.admin?
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user.admin?
   end
 end

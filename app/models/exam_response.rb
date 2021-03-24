@@ -3,7 +3,7 @@ class ExamResponse < ApplicationRecord
   belongs_to :curriculum
 
   with_options presence: true do
-    INVALID_ANSWER = /Input your answer with markdown. Like:/
-    validates :user_answer_code, format: { without: INVALID_ANSWER }
+    invalid_answer = /Input your answer with markdown. Like:/.freeze
+    validates :user_answer_code, format: { without: invalid_answer }
   end
 end

@@ -49,8 +49,6 @@ class ExamResponsesController < ApplicationController
   end
 
   def send_to_exam_new
-    if @exam == nil
-      redirect_to new_curriculum_exam_path
-    end
+    redirect_to new_curriculum_exam_path if @exam.nil?
   end
 end
