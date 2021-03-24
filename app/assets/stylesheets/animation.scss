@@ -46,6 +46,16 @@
   line-height:  54px;
 }
 
+.login-button:hover {
+  height: 54px;
+  width: 158px;
+}
+
+.login-button:hover > .login-button-text {
+  font-size: 19px;
+  line-height:  54px;
+}
+
 .arrow-left:hover {
   transform:scale(1.2,1.2);
 }
@@ -56,4 +66,16 @@
 
 a:hover {
   color: #006e00;
+}
+
+.introduction-text {
+  animation: fadeIn 5s ease 1s 1 normal;
+}
+
+@keyframes fadeIn {
+
+  0% {opacity: 0}
+
+  100% {opacity: 1}
+
 }
