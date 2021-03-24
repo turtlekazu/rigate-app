@@ -25,8 +25,6 @@ class ContentsController < ApplicationController
   end
 
   def send_to_root
-    unless current_user.admin?
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user.admin?
   end
 end

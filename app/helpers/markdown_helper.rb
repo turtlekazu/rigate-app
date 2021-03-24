@@ -12,7 +12,7 @@ module MarkdownHelper
       space_after_headers: true # ヘッダー記号(#)と文字の間にスペース必要
     }
     renderer = HTML.new(render_options)
-  
+
     extensions = {
       autolink: true, # 自動でリンク化
       fenced_code_blocks: true, # コードを表す「```」を認識
@@ -20,7 +20,7 @@ module MarkdownHelper
       strikethrough: true, # 取り消し線を表す「~~」を認識
       superscript: true, # 上つき文字を表す「^」を認識
       tables: true, # テーブルを認識
-      escape_html: true,  # xss対策 全てのHTMLタグをエスケープ(filter_htmlより優先) 
+      escape_html: true, # xss対策 全てのHTMLタグをエスケープ(filter_htmlより優先)
       quote: true # xss対策 引用符を表す「""」を認識
     }
     Redcarpet::Markdown.new(renderer, extensions).render(text).html_safe
