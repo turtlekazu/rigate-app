@@ -19,13 +19,13 @@ RSpec.describe ExamResponse, type: :model do
         expect(@exam_response.errors.full_messages).to include("User answer code can't be blank")
       end
 
-      it 'user_idが空で登録できない' do
+      it 'userが空で登録できない' do
         @exam_response.user = nil
         @exam_response.valid?
         expect(@exam_response.errors.full_messages).to include("User must exist")
       end
 
-      it 'curriculum_idが空で登録できない' do
+      it 'curriculumが空で登録できない' do
         @exam_response.curriculum = nil
         @exam_response.valid?
         expect(@exam_response.errors.full_messages).to include("Curriculum must exist")

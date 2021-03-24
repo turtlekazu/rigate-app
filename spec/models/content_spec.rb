@@ -25,7 +25,7 @@ RSpec.describe Content, type: :model do
         expect(@content.errors.full_messages).to include("Text can't be blank")
       end
 
-      it 'curriculum_idが空では登録できない' do
+      it 'curriculumが空では登録できない' do
         @content.curriculum = nil
         @content.valid?
         expect(@content.errors.full_messages).to include("Curriculum must exist")

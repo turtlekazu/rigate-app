@@ -19,7 +19,7 @@ RSpec.describe Curriculum, type: :model do
         expect(@curriculum.errors.full_messages).to include("Name can't be blank")
       end
 
-      it 'menu_idが空では登録できない' do
+      it 'menuが空では登録できない' do
         @curriculum.menu = nil
         @curriculum.valid?
         expect(@curriculum.errors.full_messages).to include("Menu must exist")

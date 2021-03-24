@@ -37,7 +37,7 @@ RSpec.describe Exam, type: :model do
         expect(@exam.errors.full_messages).to include("Explanation can't be blank")
       end
 
-      it 'curriculum_idが空では登録できない' do
+      it 'curriculumが空では登録できない' do
         @exam.curriculum = nil
         @exam.valid?
         expect(@exam.errors.full_messages).to include("Curriculum must exist")
