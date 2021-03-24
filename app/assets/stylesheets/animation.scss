@@ -1,0 +1,48 @@
+.menu-tile:hover {
+  animation-name: anim_s;
+  transform: rotate(0deg);
+  animation-duration: 0.5s;
+}
+
+.curriculum-button:hover {
+  animation-name: anim_s;
+  transform: rotate(0deg);
+  animation-duration: 0.5s;
+}
+
+@keyframes anim_s {
+  25% {
+    transform: rotate(-2deg);
+  }
+  75% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.next-button:hover {
+  height: 41px;
+  width: 106px;
+  position: absolute;
+  bottom: 17px;
+  right: 27px;
+}
+
+.next-button:hover > .next-button-text {
+  font-size: 19px;
+  line-height: 41px;
+}
+
+.arrow-left:hover {
+  transform:scale(1.2,1.2);
+}
+
+.arrow-right:hover {
+  transform:scale(-1.2,1.2);
+}
+
+a:hover {
+  color: #006e00;
+}
