@@ -18,7 +18,7 @@ Rigate(リガーテ)は、美しく読みやすいコードを書くコツを、
 ![Rigate_Check_Done](https://user-images.githubusercontent.com/77393576/112502465-707d3d00-8dcd-11eb-8130-fd3852acb740.gif)
 
 # 本番環境
-https://rigate-app.herokuapp.com/
+https://rigate.herokuapp.com/
 
 ### BASIC認証
 - name: rigate
