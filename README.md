@@ -7,6 +7,10 @@ Rigate(リガーテ)は、美しく読みやすいコードを書くコツを、
 # 本番環境
 https://rigate-app.herokuapp.com/
 
+### BASIC認証
+- name: rigate
+- pw: spaghetti
+
 ### テスト用アカウント
 - email: rigate@test
 - password: shortpasta
@@ -50,6 +54,17 @@ https://rigate-app.herokuapp.com/
 | エディタ機能     | 書いたコードをコーディングエディタ上での見た目に変換するため。      |
 
 # DEMO
+## 新規登録
+![Rigate_signin](https://user-images.githubusercontent.com/77393576/112501514-a837b500-8dcc-11eb-9211-5f74f65cedae.gif)
+
+## コンテンツの学習
+![Rigate_Contents](https://user-images.githubusercontent.com/77393576/112502223-3d3aae00-8dcd-11eb-83c5-58711a39f375.gif)
+
+## 練習問題を解く
+![Rigate_Exam](https://user-images.githubusercontent.com/77393576/112502314-52afd800-8dcd-11eb-93ba-fb569983570f.gif)
+
+## 進捗表示
+![Rigate_Check_Done](https://user-images.githubusercontent.com/77393576/112502465-707d3d00-8dcd-11eb-8130-fd3852acb740.gif)
 
 # 今後の実装予定
 - リファクタリング問題の投稿機能
