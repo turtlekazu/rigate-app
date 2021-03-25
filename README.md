@@ -4,6 +4,19 @@
 # Rigate
 Rigate(リガーテ)は、美しく読みやすいコードを書くコツを、自分の手を動かしながら習得できるWebアプリケーションです。スパゲティコードを抜け出して、ペンネやファルファッレのようなショートパスタなコードを目指しましょう！
 
+# DEMO
+## 新規登録
+![Rigate_signin](https://user-images.githubusercontent.com/77393576/112501514-a837b500-8dcc-11eb-9211-5f74f65cedae.gif)
+
+## コンテンツの学習
+![Rigate_Contents](https://user-images.githubusercontent.com/77393576/112502223-3d3aae00-8dcd-11eb-83c5-58711a39f375.gif)
+
+## 練習問題を解く
+![Rigate_Exam](https://user-images.githubusercontent.com/77393576/112502314-52afd800-8dcd-11eb-93ba-fb569983570f.gif)
+
+## 進捗表示
+![Rigate_Check_Done](https://user-images.githubusercontent.com/77393576/112502465-707d3d00-8dcd-11eb-8130-fd3852acb740.gif)
+
 # 本番環境
 https://rigate-app.herokuapp.com/
 
@@ -52,19 +65,6 @@ https://rigate-app.herokuapp.com/
 | 解答解説        | 自分の解答と模範解答を比較して、達成度を確認するため。             |
 | 進捗記録        | 完了した単元にはチェックをつけて、未完のものが分かるようにするため。 |
 | エディタ機能     | 書いたコードをコーディングエディタ上での見た目に変換するため。      |
-
-# DEMO
-## 新規登録
-![Rigate_signin](https://user-images.githubusercontent.com/77393576/112501514-a837b500-8dcc-11eb-9211-5f74f65cedae.gif)
-
-## コンテンツの学習
-![Rigate_Contents](https://user-images.githubusercontent.com/77393576/112502223-3d3aae00-8dcd-11eb-83c5-58711a39f375.gif)
-
-## 練習問題を解く
-![Rigate_Exam](https://user-images.githubusercontent.com/77393576/112502314-52afd800-8dcd-11eb-93ba-fb569983570f.gif)
-
-## 進捗表示
-![Rigate_Check_Done](https://user-images.githubusercontent.com/77393576/112502465-707d3d00-8dcd-11eb-8130-fd3852acb740.gif)
 
 # 今後の実装予定
 - リファクタリング問題の投稿機能
