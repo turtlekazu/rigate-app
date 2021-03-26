@@ -9,7 +9,7 @@ Rigate(リガーテ)は、美しく読みやすいコードを書くコツを、
 ![Rigate_signin](https://user-images.githubusercontent.com/77393576/112501514-a837b500-8dcc-11eb-9211-5f74f65cedae.gif)
 
 ## コンテンツの学習
-![Rigate_Contents](https://user-images.githubusercontent.com/77393576/112502223-3d3aae00-8dcd-11eb-83c5-58711a39f375.gif)
+![Rigate_Contents](https://user-images.githubusercontent.com/77393576/112591896-62b8cd80-8e48-11eb-9cb6-130f952a867c.gif)
 
 ## 練習問題を解く
 ![Rigate_Exam](https://user-images.githubusercontent.com/77393576/112502314-52afd800-8dcd-11eb-93ba-fb569983570f.gif)
