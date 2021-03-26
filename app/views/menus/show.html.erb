@@ -20,7 +20,7 @@
           <%= link_to curriculum_path(curriculum) do %>
             <div class="curriculum-button">
               <% if curriculum.exam_responses.find_by(user_id: current_user.id) != nil && curriculum.exam_responses.find_by(user_id: current_user.id).score != nil %>
-                <% if curriculum.exam_responses.find_by(user_id: current_user.id).score > 5 %>
+                <% if curriculum.exam_responses.order(id: "DESC").find_by(user_id: current_user.id).score > 5 %>
                   <div class="curriculum-done-flag">完了</div>
                 <% else %>
                   <div class="curriculum-read-flag">読了</div>
