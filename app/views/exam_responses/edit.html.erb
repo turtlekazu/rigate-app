@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
 
-<div class="main-long">
+<div class="main-exam-response">
   <div class="back-image">
     <div class="catch-copy">No more spaghetti codes.</div>
     
@@ -28,7 +28,7 @@
       <div class="exam-explanation">
         <div><%= @exam.explanation %></div>
       </div>
-      <div class="exam-response-finish">
+      <div>
         <%= form_with model: [@curriculum, @exam_response], local: true do |f| %>
           <div class="score">
             <div class='score-text'>自己採点</div>
