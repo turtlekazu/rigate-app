@@ -1,13 +1,152 @@
-// Place all the styles related to the menus controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.menu-list {
+  margin: 0 auto 0;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-.main-back-image {
-  background-image: image-url('back_image.jpg');
-  background-size: cover;
+.menu-tile {
+  margin: 10px;
+  width: 400px;
+  height: 150px;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.menu-name {
+  font-size: 20px;
+  padding: 12px 20px;
+  width: 300px;
+  height: 30px;
+  line-height: 30px;
+  color: #4c4c4c;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+
+.menu-pasta-name {
+  font-family: 'Monoton';
+  font-size: 25px;
+  color: #006e00;
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+
+.menu-pasta-image {
+  position: absolute;
+  left: 30px;
+  bottom: 5px;
+}
+
+.menu-pasta-image-top {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+}
+
+.curriculum-board {
+  margin-top: 30px;
+  height: 75%;
+  width: 750px;
+  border-radius: 20px;
+  background-color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+}
+
+.curriculum-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .curriculum-button {
+  height: 65px;
+  width: 360px;
+  border-radius: 20px;
+  margin: 15px;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  text-align: center;
+  position: relative;
   background-image: image-url('button_image.jpg');
   background-size: cover;
+}
+
+.curriculum-done-flag {
+  position: absolute;
+  width: 50px;
+  color: white;
+  top: 18px;
+  left: -10px;
+  padding: 3px;
+  border-radius: 2px;
+  background-image: image-url('pink_button_image.png');
+  background-size: cover;
+}
+
+.curriculum-read-flag {
+  position: absolute;
+  width: 50px;
+  color: white;
+  top: 18px;
+  left: -10px;
+  padding: 3px;
+  border-radius: 2px;
+  background-image: image-url('blue_button_image.jpg');
+  background-size: cover;
+}
+
+.curriculum-name {
+  margin: 0 auto;
+  line-height: 65px;
+  color: white;
+  font-size: 20px;
+}
+
+.introduction {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.introduction-text {
+  font-size: 20px;
+  color: white;
+  width: 610px;
+  margin-bottom: 60px;
+}
+
+.start-button-block {
+  height: 60px;
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-button {
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  height: 50px;
+  width: 150px;
+  border-radius: 20px;
+  text-align: center;
+  background-image: image-url('pink_button_image.png');
+  background-size: cover;
+}
+
+.start-button-text {
+  color: white;
+  font-size: 18px;
+  line-height:  50px;
 }
