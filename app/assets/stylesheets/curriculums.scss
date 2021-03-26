@@ -1,33 +1,113 @@
-// Place all the styles related to the curriculums controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.menu-pasta-name-content {
+  font-family: 'Monoton';
+  font-size: 25px;
+  color: #006e00;
+  position: absolute;
+  right: 30px;
+  top: 15px;
+}
+
+.menu-pasta-image-top-content {
+  position: absolute;
+  right: 30px;
+  top: 70px;
+}
+
+.content-board {
+  margin-top: 60px;
+  height: 80%;
+  width: 1200px;
+  border-radius: 20px;
+  background-color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+}
 
 .curriculum-button-mini {
+  height: 40px;
+  width: 240px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  text-align: center;
+  position: absolute;
+  top: 15px;
+  left: calc(50vw - 160px);
   background-image: image-url('button_image.jpg');
   background-size: cover;
 }
 
+.curriculum-name-mini {
+  margin: 0 auto;
+  line-height: 40px;
+  color: white;
+  font-size: 18px;
+}
+
+.content-each-board {
+  height: 350px;
+  width: 720px;
+  margin-top: 50px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.content-each {
+  display: none;
+  word-wrap: break-word;
+}
+
+.contents-list {
+  padding: 20px 25px 25px;
+  
+}
+
+.content-title {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.content-text {
+  font-size: 17px;
+  height: 250px;
+  overflow: scroll;
+}
+
+.arrow-left {
+  position: absolute;
+  left: -40px;
+  top: 135px;
+  cursor: pointer;
+}
+
+.arrow-right {
+  transform: scale(-1, 1);
+  position: absolute;
+  left: calc(720px + 20px);
+  top: 135px;
+  cursor: pointer;
+}
+
 .next-button {
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.4);
+  height: 35px;
+  width: 100px;
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  border-radius: 20px;
+  text-align: center;
   background-image: image-url('pink_button_image.png');
   background-size: cover;
 }
 
-.start-button {
-  background-image: image-url('pink_button_image.png');
-  background-size: cover;
-}
-
-.login-button {
-  background-image: image-url('pink_button_image.png');
-  background-size: cover;
-}
-
-.curriculum-done-flag {
-  background-image: image-url('pink_button_image.png');
-  background-size: cover;
-}
-
-.curriculum-read-flag {
-  background-image: image-url('blue_button_image.jpg');
-  background-size: cover;
+.next-button-text {
+  color: white;
+  font-size: 18px;
+  line-height:  35px;
 }
