@@ -20,10 +20,6 @@ Rigate(リガーテ)は、美しく読みやすいコードを書くコツを、
 # 本番環境
 https://rigate.herokuapp.com/
 
-### BASIC認証
-- name: rigate
-- pw: spaghetti
-
 ### テスト用アカウント
 - email: rigate@test
 - password: shortpasta
