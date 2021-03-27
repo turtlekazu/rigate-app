@@ -42,6 +42,7 @@ Content.create(title: "1. 明確な単語を選ぶ", text: '「名前に情報�
   getなら、fetchやdownloadなどに。
   sizeなら中身に合わせて、heightやNumNodes,MemoryBytesなどに。
   stopなら、取り消せない場合はkill, 後から戻せるならpauseなどに。
+
   類義語をできるだけ多く知識として身につけ、「カラフル」な単語を使いましょう。', curriculum_id: curriculum.id)
 Content.create(title: "2. 汎用的な名前を避ける", text: 'hogeやfoo, value, tmpといった、何にでも使える名前をつけることは、情報を埋め込む余地を逃してしまいます。エンティティのもつ具体的な"値"や"目的"を表した名前をつけましょう。
 
@@ -51,7 +52,7 @@ Content.create(title: "2. 汎用的な名前を避ける", text: 'hogeやfoo, va
 Content.create(title: "3. ループ処理", text: 'i, j, kといった名前はループ処理の内部変数としてよく使います。これ自体は「イテレータ」という情報をちゃんと伝えています。
 
   しかし、イテレータが複数ある場合はもっといいアイデアがあります。例えばi, j, kを、club_i, menbers_i, users_iのように、異なる種類のイテレータには異なる言葉を頭につけます。こうすればj,kを使う必要がありません。', curriculum_id: curriculum.id)
-Content.create(title: "4. 超具体的な名前をつける", text: '例えば任意のTCP/IPポートをサーバがリッスンできるか確認するメソッドに「ServerCanStart()」という名前をつけたとします。この名前はまだ抽象的です。
+Content.create(title: "4. 具体的な名前をつける", text: '例えば任意のTCP/IPポートをサーバがリッスンできるか確認するメソッドに「ServerCanStart()」という名前をつけたとします。この名前はまだ抽象的です。
 
 Serverは何をStartするのか、そのために何を確認しているのか？その戻り値は何なのか？
 例えば「CanListenOnPort()」という名前にすれば万事解決です。', curriculum_id: curriculum.id)
@@ -62,9 +63,7 @@ Content.create(title: "5. 単位や属性をつける", text: '名前は短い�
   他にも、暗号化をする必要があるプレーンテキストのパスワードが格納された変数がある場合、「password」ではなく「plaintext_password」の方が将来のミスを防げます。', curriculum_id: curriculum.id)
 Content.create(title: "6. 名前の長さはスコープに比例", text: '情報を追加するという観点だと、どんどん名前は長くなります。ですが、例えば「newNavigationControllerWrappingViewControllerForDataSourceOfClass」ほどの長さになると考えものです。画面を占有し、コード行が増えます。
 
-  名前の長さはスコープに比例させる、というのが一つの指標になります。スコープが極めて小さい場合、1文字の名前でも問題ありません。これがクラス全体で何度も使われる変数になると、十分な情報を詰め込んでおく必要があります。
-  
-  その際、削除しても情報が変わらないような、「DoServeLoop」や「ConvertToString」の中の「Do」や「Convert」といった不要な単語は積極的に切り落としましょう。', curriculum_id: curriculum.id)
+  名前の長さはスコープに比例させる、というのが一つの指標になります。スコープが極めて小さい場合、1文字の名前でも問題ありません。これがクラス全体で何度も使われる変数になると、十分な情報を詰め込んでおく必要があります。', curriculum_id: curriculum.id)
 Content.create(title: "7. 名前のフォーマットを活用", text: '大文字、アンダースコア(_)、ハイフン(-)を使って、規則を設けて名前をつけることで情報を埋め込むこともできます。
 
 例えばクラス名はClassName(キャメルケース)で、変数名はvaluable_name(小文字スネークケース)、定数はCONSTANT_NAME(大文字スネークケース)、メンバ変数はmember_(語尾にアンダースコア)といったように。
@@ -99,8 +98,7 @@ Exam.create!(question: "以下の関数・変数を、わかりやすく命名�
 27. kbpsの最大値を格納した変数limit
 28. メガバイト単位のサイズを格納した変数size
 29. UTF-8の文字コードで書かれたHTMLが格納された変数html
-30. エスケープ処理がまだされていないコメント文字列が格納された変数comment
-31. ConvertToBinary()メソッド -> バイナリに変換する", answer_code:"1. fetchPage() または downloadPage()
+30. エスケープ処理がまだされていないコメント文字列が格納された変数comment", answer_code:"1. fetchPage() または downloadPage()
 2. MemoryByte()
 3. Height()
 4. Kill()
@@ -129,8 +127,7 @@ Exam.create!(question: "以下の関数・変数を、わかりやすく命名�
 27. max_kbps
 28. size_mb
 29. html_utf8
-30. unescaped_comment
-31. ToBinary()", explanation:"sendやfind, start, makeは、汎用的に扱える単語なだけあって、逆に意味を曖昧にしてしまいがちです。
+30. unescaped_comment", explanation:"sendやfind, start, makeは、汎用的に扱える単語なだけあって、逆に意味を曖昧にしてしまいがちです。
 なるべく意味の狭い単語を使うことで、動作をもっと具体的に伝えることができます。
 
 DISALLOW_EVIL_CONSTRUCTORS()メソッドは、Googleのオープンソースプロジェクトで実際に一時期使われていた関数だそうです。
