@@ -64,6 +64,8 @@
 }
 
 .curriculum-list {
+  height: 90%;
+  overflow: scroll;
   display: flex;
   align-items: center;
   flex-direction: column;
