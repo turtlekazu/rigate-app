@@ -19,8 +19,8 @@ menu4.save!
 menu = Menu.find_by(pasta_name: "Farfalle")
 Curriculum.create!(name: "名前に情報をつめこむ", menu_id: menu.id)
 Curriculum.create!(name: "誤解されない名前", menu_id: menu.id)
-Curriculum.create!(name: "フォーマット", menu_id: menu.id)
-Curriculum.create!(name: "コメント", menu_id: menu.id)
+Curriculum.create!(name: "レイアウトを整える", menu_id: menu.id)
+Curriculum.create!(name: "コメントをつける", menu_id: menu.id)
 menu = Menu.find_by(pasta_name: "Fusilli")
 Curriculum.create!(name: "if文・条件分岐", menu_id: menu.id)
 Curriculum.create!(name: "巨大な式の分割", menu_id: menu.id)
@@ -34,9 +34,7 @@ Curriculum.create!(name: "単体テスト", menu_id: menu.id)
 Curriculum.create!(name: "結合テスト", menu_id: menu.id)
 Curriculum.create!(name: "エラー処理", menu_id: menu.id)
 
-
-
-curriculum = Curriculum.find_by(name: "名前のつけ方")
+curriculum = Curriculum.find_by(name: "名前に情報をつめこむ")
 Content.create(title: "1. 明確な単語を選ぶ", text: '「名前に情報を詰め込む」ことを意識しましょう。
   getやsize、stopといった単語は抽象的すぎて、具体的な動作が想像できません。
 
@@ -134,7 +132,7 @@ Exam.create!(question: "以下の関数・変数を、わかりやすく命名�
 DISALLOW_EVIL_CONSTRUCTORS()メソッドは、Googleのオープンソースプロジェクトで実際に一時期使われていた関数だそうです。
 
 単位や属性などは手軽に付加できるため、積極的に使いましょう。", curriculum_id: curriculum.id)
-curriculum = Curriculum.find_by(name: "フォーマット")
+curriculum = Curriculum.find_by(name: "誤解されない名前")
 Content.create(title: "1. filter(条件による抽出)", text: '例えば、filter("year <= 2021")となっていた時、
 返ってくる値はこの条件に適したものでしょうか、それとも条件に適さないものでしょうか？
 
@@ -174,7 +172,7 @@ Content.create(title: "6. ブール値", text: '例えば、bool read_password =
 この原因はreadという単語の意味が曖昧なことです。「need_password」や「is_authenticated」といった表現に変更すれば、明確になります。
   
 基本的にブール値の変数名は、頭に「is/has/can/should」といった言葉をつけることが望ましいです。', curriculum_id: curriculum.id)
-Content.create(tilte: "7. 一般的な認識に合わせる", text: 'get*()というメソッドは、基本的に値を返すだけの軽量アクセサとしての認識がされています。
+Content.create(title: "7. 一般的な認識に合わせる", text: 'get*()というメソッドは、基本的に値を返すだけの軽量アクセサとしての認識がされています。
 
 そのため、get*()という名前をつけたメソッドに大量の計算を要する処理を記述してしまうとどうなるでしょうか。
 それを知らない別の人が、軽い処理だと思って何度も呼び出してしまい、無駄な計算コストがかかる、といった自体が起こる可能性があります。
@@ -201,7 +199,9 @@ Exam.create!(question: "以下の関数・変数を、わかりやすく命名�
 限界値を含めるときはmin/max、範囲指定にはfirst/last、包含/排他的範囲にはbegin/endを使います。
 
 ブール値はis/has/can/shouldを頭につけることで、意味が明確になります。", curriculum_id: curriculum.id)
-curriculum = Curriculum.find_by(name: "コメント")
+curriculum = Curriculum.find_by(name: "レイアウトを整える")
+Exam.create!(question: "以下のコードを分かりやすく命名してください", question_code: "def test\nputs question\nend", answer_code:"def test\nputs answer\nend", explanation:"explain", curriculum_id: curriculum.id)
+curriculum = Curriculum.find_by(name: "コメントをつける")
 Exam.create!(question: "以下のコードを分かりやすく命名してください", question_code: "def test\nputs question\nend", answer_code:"def test\nputs answer\nend", explanation:"explain", curriculum_id: curriculum.id)
 curriculum = Curriculum.find_by(name: "if文・条件分岐")
 Exam.create!(question: "以下のコードを分かりやすく命名してください", question_code: "def test\nputs question\nend", answer_code:"def test\nputs answer\nend", explanation:"explain", curriculum_id: curriculum.id)
