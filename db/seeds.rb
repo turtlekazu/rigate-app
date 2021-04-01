@@ -200,6 +200,186 @@ Exam.create!(question: "以下の関数・変数を、わかりやすく命名�
 
 ブール値はis/has/can/shouldを頭につけることで、意味が明確になります。", curriculum_id: curriculum.id)
 curriculum = Curriculum.find_by(name: "レイアウトを整える")
+Content.create!(title: "1. 美しいレイアウトの原則", text: 'コードのレイアウトが美しく整っていると、読み手がコードの意味の理解にかかる時間を短縮できます。
+  レイアウトには、余白・配置・順序といった要素が関わっています。
+  
+  ①なじみがある、一貫したレイアウトを使う。
+  ②似ているコードは似ているように見せる。
+  ③関連するコード同士はブロック化する。
+  
+  という3原則に則って、レイアウトを改善していきましょう。
+  ', curriculum_id: curriculum.id)
+Content.create!(title: "2. 一貫性のある改行位置", text: '改行に気を遣うだけでも、見た目はグッと美しくなります。
+  コメントを整列させて、頭の位置を合わせることも有効です。
+  例えば、
+  
+  public class PerformanceTester {
+    public static final TcpConnectionSimulator wifi = new TcpConnectionSimulator(
+      500, /* Kbps */
+      80, /* millisecs latency */
+      200, /* jitter */
+      1 /* packet loss % */);
+  
+    public static final TopConnectionSimulatior t3_fiber =
+      new TcpConnectionSimulator(
+        45000, /* Kbps */
+        10, /* millisecs latency */
+        0, /* jitter */
+        0 /* packet loss % */);
+  
+    public static final TcpConnectionSimulator cell = new TcpConnectionSimulator(
+        100, /* Kbps */
+        400, /* millisecs latency */
+        250, /* jitter */
+        5 /* packet loss % */);
+  }
+  
+  のシルエットを美しく直すとすると、以下のようになります。
+  
+  public class PerformanceTester {
+    public static final TcpConnectionSimulator wifi = 
+      new TcpConnectionSimulator(
+        500,   /* Kbps */
+        80,    /* millisecs latency */
+        200,   /* jitter */
+        1      /* packet loss % */);
+  
+    public static final TopConnectionSimulatior t3_fiber =
+      new TcpConnectionSimulator(
+        45000, /* Kbps */
+        10,    /* millisecs latency */
+        0,     /* jitter */
+        0      /* packet loss % */);
+  
+    public static final TcpConnectionSimulator cell = 
+      new TcpConnectionSimulator(
+        100,   /* Kbps */
+        400,   /* millisecs latency */
+        250,   /* jitter */
+        5      /* packet loss % */);
+  }
+  ', curriculum_id: curriculum.id)
+Content.create!(title: "3. メソッドをつくって整列", text: '例えば、以下のような場合、
+
+  DatabaseConnection database_connection;
+  string error;
+  assert(ExpandFullName(database_connection, "Dog Adams", &error) 
+      == "Mr. Douglas Adams");
+  assert(error == "");
+  assert(ExpandFullName(database_connection, "Jake Brown", &error) 
+      == "Mr. Jacob Brown Ⅲ");
+  assert(error == "");
+  assert(ExpandFullName(database_connection, "No Such Guy", &error) == "");
+  assert(error == "no match found");
+  assert(ExpandFullName(database_connection, "John", &error) == "");
+  assert(error == "more than one result");
+  
+  シルエットが汚いため、処理内容がスッと頭に入ってきません。
+  そんな時は、新しいメソッドをつくってしまい、以下のようにすれば、見た目が整います。
+  
+  CheckFullName("Doug Adams", "Mr. Douglas Adams", "")
+  CheckFullName("Jake Brown", "Mr. Jacob Brown Ⅲ", "")
+  CheckFullName("No Such Guy", "", "no match found")
+  CheckFullName("John", "", "more than one result")
+  
+  void CheckFullName(string partial_name,
+                     string expected_full_name,
+                     string expected_error) {
+      string error;
+      string full_name = ExpandFullName(database_connection, partial_name, &error);
+      assert(full_name == expected_full_name);
+      assert(error == expected_error);
+  }
+  
+  メソッドをつくったことで、何をしているのかを直感的につかみやすくなりました。
+  
+  ', curriculum_id: curriculum.id)
+Content.create!(title: "4. 縦のラインを揃える", text: '縦の線を揃えるだけで、似ているコードを似ているように見せることができます。
+  例えば、先程の例では、
+  
+  CheckFullName("Doug Adams", "Mr. Douglas Adams", "")
+  CheckFullName("Jake Brown", "Mr. Jacob Brown Ⅲ", "")
+  CheckFullName("No Such Guy", "", "no match found")
+  CheckFullName("John", "", "more than one result")
+  
+  を、
+  
+  CheckFullName("Doug Adams" , "Mr. Douglas Adams", "")
+  CheckFullName("Jake Brown" , "Mr. Jacob Brown Ⅲ", "")
+  CheckFullName("No Such Guy", ""                 , "no match found")
+  CheckFullName("John"       , ""                 , "more than one result")
+  
+  とすることで、もっと把握しやすくなります。
+  ', curriculum_id: curriculum.id)
+Content.create!(title: "5. 順番にも意味がある", text: 'コードの順番は、コード実行の際に影響を及ぼすことはありませんが、せっかくなのでここにも情報を付加してしまいましょう。
+  例えば、
+  
+  ・重要度順に並べる
+  ・アルファベット順に並べる
+  ・別のコードで用いている順番と同じにする
+  
+  などです。
+  例えば、
+  
+  detail   = request.POST.get('details')
+  location = request.POST.get('location')
+  phone    = request.POST.get('phone')
+  email    = request.POST.get('email')
+  url      = request.POST.get('url')
+  
+  と適当に並べていたとして、対応するHTMLの<input>フィールドが
+  details, phone, email, url, locationの順番になっているなら、
+  
+  detail   = request.POST.get('details')
+  phone    = request.POST.get('phone')
+  email    = request.POST.get('email')
+  url      = request.POST.get('url')
+  location = request.POST.get('location')
+  
+  とした方が一貫性しています。
+  ', curriculum_id: curriculum.id)
+Content.create!(title: "6. コードをブロックや段落に分割", text: 'グループや階層をつくって1単位として分割することで、人間の脳は概要を掴みやすくなります。
+  例えば、以下のようなC++コードがあったとします。
+  
+  class FrontentServer {
+    public:
+      FrontendServer();
+      void ViewProfile(HttpRequest* request);
+      void OpenDatabase(string location, string user);
+      void SaveProfile(HttpRequest* request);
+      string ExtractQueryParam(HttpRequest* request, string param);
+      void ReplyOK(HttpRequest* request);
+      void FindFriends(HttpRequest* request);
+      void ReplyNotFound(HttpRequest* request, string error);
+      void CloseDatabase(string location);
+      ~FrontendServer();
+  };
+  
+  これを、以下のようにグループに分けると、さらに概要を把握しやすくなります。
+  
+  class FrontentServer {
+    public:
+      FrontendServer();
+      ~FrontendServer();
+  
+      // ハンドラ
+      void ViewProfile(HttpRequest* request);
+      void SaveProfile(HttpRequest* request);
+      void FindFriends(HttpRequest* request);
+  
+      // リクエストとリプライのユーティリティ
+      string ExtractQueryParam(HttpRequest* request, string param);
+      void ReplyOK(HttpRequest* request);
+      void ReplyNotFound(HttpRequest* request, string error);
+  
+      // データベースのヘルパー
+      void OpenDatabase(string location, string user);
+      void CloseDatabase(string location);
+  };
+  
+  このような、より小さい単位への分割は、一般的な文章構成でも使われています。
+  文章を段落に分ける意義は、視覚的な踏石を提供し、段落単位で移動できるようにすることです。
+  ', curriculum_id: curriculum.id)
 Exam.create!(question: "以下のコードを分かりやすく命名してください", question_code: "def test\nputs question\nend", answer_code:"def test\nputs answer\nend", explanation:"explain", curriculum_id: curriculum.id)
 curriculum = Curriculum.find_by(name: "コメントをつける")
 Exam.create!(question: "以下のコードを分かりやすく命名してください", question_code: "def test\nputs question\nend", answer_code:"def test\nputs answer\nend", explanation:"explain", curriculum_id: curriculum.id)
